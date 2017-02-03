@@ -8,4 +8,11 @@ this.image = options.image;
 
 };
 
+planet.prototype = {
+
+  getImage: function() {
+      return "http://planets-hurdleg.mybluemix.net/planets/"+this.id+"/image"
+    }
+}
+
 module.exports = planet;

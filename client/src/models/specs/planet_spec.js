@@ -40,9 +40,9 @@ describe('Planet', function(){
     assert.equal(1, planet3.moonValue);
   });
 
-  // it('get image', function() {
-  //   assert.equal("http://planets-hurdleg.mybluemix.net/planets/1/image", planet2.image);
-  // });
+  it('get image', function() {
+    assert.equal("http://planets-hurdleg.mybluemix.net/planets/1/image", planet2.getImage());
+  });
 
 
 
