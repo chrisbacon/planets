@@ -4,6 +4,7 @@
   "main": "server.js",
   "scripts": {
     "test": "mocha client/src/models/specs/*",
+
     "start": "node server.js"
   },
   "repository": {
