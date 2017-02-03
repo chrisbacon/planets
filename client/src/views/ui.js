@@ -19,7 +19,7 @@ UI.prototype = {
         var main = document.querySelector('main');
 
         for (var planet in planets) {
-            var img = this.createImage(planet.imageUrl());
+            var img = this.createImage(planet.getImage());
             main.appendChild(img);
         }
     }

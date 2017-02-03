@@ -77,7 +77,7 @@
 	        var main = document.querySelector('main');
 	
 	        for (var planet in planets) {
-	            var img = this.createImage(planet.image);
+	            var img = this.createImage(planet.getImage());
 	            main.appendChild(img);
 	        }
 	    }
@@ -90,7 +90,7 @@
 /* 2 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var Planet = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"planet\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+	var Planet = __webpack_require__(3);
 	
 	var planets = function() {
 	
@@ -109,7 +109,7 @@
 	
 	        var self = this;
 	
-	        this.makeRequest('https://planets-hurdleg.mybluemix.net/', function() {
+	        this.makeRequest('http://planets-hurdleg.mybluemix.net/', function() {
 	            if (this.status !== 200) {
 	                return;
 	            }
@@ -133,6 +133,21 @@
 	}
 	
 	module.exports = planets;
+
+/***/ },
+/* 3 */
+/***/ function(module, exports) {
+
+	var planet = function(options) {
+	this.id = options.id;
+	this.name = options.name;
+	this.description = options.description;
+	this.distanceToSun = options.distanceToSun;
+	this.moonValue = options.moonValue;
+	
+	};
+	
+	module.exports = planet;
 
 /***/ }
 /******/ ]);
