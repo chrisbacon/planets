@@ -3,7 +3,7 @@ var router = express.Router();
 var path = require('path');
 
 
-// router.use
+router.use('/planets', require('./planets'));
 
 router.get('/', function(req, res) {
   res.sendFile(path.join(__dirname + '/../client/build/index.html'));
