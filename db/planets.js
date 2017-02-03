@@ -1,6 +1,4 @@
-var Planet = require('./planet');
-
-
+var Planet = require('../client/src/models/planet');
 
 var PlanetsDB = function(){
 
@@ -78,7 +76,7 @@ var PlanetsDB = function(){
     });
 
 
-    var planet1 = new Planet({
+    var planet8 = new Planet({
         planetId: 7,
         name: "Neptune",
         overview: "The Windiest Planet",

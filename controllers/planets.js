@@ -1,5 +1,5 @@
 //since we don't have a database we'll use our front end models at the moment
-var planets = require('../client/src/models/planets')();
+var planets = require('../db/planets.js')();
 
 var express = require('express');
 
@@ -12,3 +12,5 @@ planetRouter.get('/', function(req, res) {
 planetRouter.get('/:id', function(req, res){
   res.json({data:planets[req.params.id]});
 });
+
+module.exports = planetRouter;

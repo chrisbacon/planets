@@ -139,13 +139,21 @@
 /***/ function(module, exports) {
 
 	var planet = function(options) {
-	this.id = options.id;
+	this.id = options.planetId;
 	this.name = options.name;
-	this.description = options.description;
-	this.distanceToSun = options.distanceToSun;
-	this.moonValue = options.moonValue;
+	this.overview = options.overview;
+	this.distanceToSun = options.distance_from_sun;
+	this.moonValue = options.number_of_moons;
+	this.image = options.image;
 	
 	};
+	
+	planet.prototype = {
+	
+	  getImage: function() {
+	      return "http://planets-hurdleg.mybluemix.net/planets/"+this.id+"/image"
+	    }
+	}
 	
 	module.exports = planet;
 
