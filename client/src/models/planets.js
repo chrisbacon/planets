@@ -22,7 +22,7 @@ planets.prototype = {
             var jsonString = this.responseText;
             var results = JSON.parse(jsonString);
 
-            var planets = self.populateCountries(results);
+            var planets = self.populatePlanet(results);
             callback(planets);
         });
     },
