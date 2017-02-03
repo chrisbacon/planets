@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var path = require('path');
 
+
 // router.use
 
 router.get('/', function(req, res) {
@@ -11,5 +12,6 @@ router.get('/', function(req, res) {
 router.get('/about', function(req, res) {
   res.json({data: "planets..."});
 });
+
 
 module.exports = router;
