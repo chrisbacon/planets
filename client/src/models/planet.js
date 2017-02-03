@@ -1,9 +1,9 @@
 var planet = function(options) {
-this.id = options.planetId;
+this.id = options.id;
 this.name = options.name;
 this.overview = options.overview;
-this.distanceToSun = options.distance_from_sun;
-this.moonValue = options.number_of_moons;
+this.distanceToSun = options.distanceToSun;
+this.moonValue = options.moonValue;
 this.image = options.image;
 
 };

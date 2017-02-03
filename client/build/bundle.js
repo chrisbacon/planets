@@ -57,6 +57,7 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	var Planets = __webpack_require__(2);
+	var Planet = __webpack_require__(3)
 	
 	var UI = function() {
 	    this.planets = new Planets;
@@ -71,12 +72,13 @@
 	    createImage: function(url) {
 	        var img = document.createElement('img');
 	        img.src = url;
+	        return img;
 	    },
 	
 	    render: function(planets) {
 	        var main = document.querySelector('main');
-	
-	        for (var planet in planets) {
+	        for (var planet of planets) {
+	            console.log(planet.getImage())
 	            var img = this.createImage(planet.getImage());
 	            main.appendChild(img);
 	        }
@@ -109,14 +111,15 @@
 	
 	        var self = this;
 	
-	        this.makeRequest('http://planets-hurdleg.mybluemix.net/', function() {
+	        this.makeRequest('http://localhost:3000/planets', function() {
 	            if (this.status !== 200) {
 	                return;
 	            }
 	            var jsonString = this.responseText;
 	            var results = JSON.parse(jsonString);
 	
-	            var planets = self.populatePlanets(results);
+	            console.log(results);
+	            var planets = self.populatePlanets(results.data);
 	            callback(planets);
 	        });
 	    },
@@ -139,11 +142,11 @@
 /***/ function(module, exports) {
 
 	var planet = function(options) {
-	this.id = options.planetId;
+	this.id = options.id;
 	this.name = options.name;
 	this.overview = options.overview;
-	this.distanceToSun = options.distance_from_sun;
-	this.moonValue = options.number_of_moons;
+	this.distanceToSun = options.distanceToSun;
+	this.moonValue = options.moonValue;
 	this.image = options.image;
 	
 	};
@@ -151,7 +154,7 @@
 	planet.prototype = {
 	
 	  getImage: function() {
-	      return "http://planets-hurdleg.mybluemix.net/planets/"+this.id+"/image"
+	      return '/images/planet'+this.id+'.png';
 	    }
 	}
 	

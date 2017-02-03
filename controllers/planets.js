@@ -6,6 +6,7 @@ var express = require('express');
 var planetRouter = express.Router();
 
 planetRouter.get('/', function(req, res) {
+    console.log(planets);
   res.json({data:planets});
 });
 

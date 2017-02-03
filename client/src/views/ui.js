@@ -1,4 +1,5 @@
 var Planets = require('../models/planets');
+var Planet = require('../models/planet')
 
 var UI = function() {
     this.planets = new Planets;
@@ -13,12 +14,13 @@ UI.prototype = {
     createImage: function(url) {
         var img = document.createElement('img');
         img.src = url;
+        return img;
     },
 
     render: function(planets) {
         var main = document.querySelector('main');
-
-        for (var planet in planets) {
+        for (var planet of planets) {
+            console.log(planet.getImage())
             var img = this.createImage(planet.getImage());
             main.appendChild(img);
         }

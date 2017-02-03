@@ -17,14 +17,15 @@ planets.prototype = {
 
         var self = this;
 
-        this.makeRequest('http://planets-hurdleg.mybluemix.net/', function() {
+        this.makeRequest('http://localhost:3000/planets', function() {
             if (this.status !== 200) {
                 return;
             }
             var jsonString = this.responseText;
             var results = JSON.parse(jsonString);
 
-            var planets = self.populatePlanets(results);
+            console.log(results);
+            var planets = self.populatePlanets(results.data);
             callback(planets);
         });
     },
