@@ -41,7 +41,7 @@ describe('Planet', function(){
   });
 
   it('get image', function() {
-    assert.equal("http://planets-hurdleg.mybluemix.net/planets/1/image", planet2.getImage());
+    assert.equal("/images/planet1.png", planet2.getImage());
   });
 
 
