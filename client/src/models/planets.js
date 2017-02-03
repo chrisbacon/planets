@@ -1,4 +1,4 @@
-var Planet = require('planet');
+var Planet = require('./planet');
 
 var planets = function() {
 
@@ -17,7 +17,7 @@ planets.prototype = {
 
         var self = this;
 
-        this.makeRequest('https://planets-hurdleg.mybluemix.net/', function() {
+        this.makeRequest('http://planets-hurdleg.mybluemix.net/', function() {
             if (this.status !== 200) {
                 return;
             }
