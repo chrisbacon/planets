@@ -1,3 +1,5 @@
+var Planet = require('planet');
+
 var planets = function() {
 
 };
@@ -15,14 +17,14 @@ planets.prototype = {
 
         var self = this;
 
-        this.makeRequest('https://restcountries.eu/rest/v1/all', function() {
+        this.makeRequest('https://planets-hurdleg.mybluemix.net/', function() {
             if (this.status !== 200) {
                 return;
             }
             var jsonString = this.responseText;
             var results = JSON.parse(jsonString);
 
-            var planets = self.populatePlanet(results);
+            var planets = self.populatePlanets(results);
             callback(planets);
         });
     },
@@ -30,8 +32,8 @@ planets.prototype = {
     populatePlanets: function(results) {
         var planets = [];
         for (var result of results) {
-            var planet = {name: result.name};
-            planets.push(country);
+            var planet = new Planet(result);
+            planets.push(planet);
         }
         return planets;
     }   

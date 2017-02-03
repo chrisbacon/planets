@@ -54,9 +54,85 @@
 
 /***/ },
 /* 1 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
+	var Planets = __webpack_require__(2);
+	
+	var UI = function() {
+	    this.planets = new Planets;
+	
+	    this.planets.all(function(result) {
+	        this.render(result);
+	    }.bind(this))
+	}
+	
+	UI.prototype = {
+	
+	    createImage: function(url) {
+	        var img = document.createElement('img');
+	        img.src = url;
+	    },
+	
+	    render: function(planets) {
+	        var main = document.querySelector('main');
+	
+	        for (var planet in planets) {
+	            var img = this.createImage(planet.image);
+	            main.appendChild(img);
+	        }
+	    }
+	
+	}
+	
+	module.exports = UI;
 
+/***/ },
+/* 2 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var Planet = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"planet\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+	
+	var planets = function() {
+	
+	};
+	
+	planets.prototype = {
+	
+	    makeRequest: function (url, callback) {
+	      var request = new XMLHttpRequest();
+	      request.open('GET', url);
+	      request.onload = callback;
+	      request.send();
+	    },
+	
+	    all: function(callback) {
+	
+	        var self = this;
+	
+	        this.makeRequest('https://planets-hurdleg.mybluemix.net/', function() {
+	            if (this.status !== 200) {
+	                return;
+	            }
+	            var jsonString = this.responseText;
+	            var results = JSON.parse(jsonString);
+	
+	            var planets = self.populatePlanets(results);
+	            callback(planets);
+	        });
+	    },
+	
+	    populatePlanets: function(results) {
+	        var planets = [];
+	        for (var result of results) {
+	            var planet = new Planet(result);
+	            planets.push(planet);
+	        }
+	        return planets;
+	    }   
+	
+	}
+	
+	module.exports = planets;
 
 /***/ }
 /******/ ]);
