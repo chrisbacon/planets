@@ -1,18 +1,23 @@
-// var Planet = require('../planet');
-// var assert = require('assert');
+var Planet = require('../planet');
+var assert = require('assert');
 
-
-
-var planet1 new Planet(0, "Mercury", "The Swiftest Planet", 0.39, 0);
-var planet2 new Planet(1, "Venus", "Planetary Hot Spot", 0.72, 0);
-var planet3 new Planet(2, "Earth", "Our Home Planet", 1, 1);
 
 describe('Planet', function(){
-  beforeEach(function){
-    // planet1.name = "Mercury";
-    // planet2.name = "Venus";
-    // planet3.name = "Earth";
-  }
+  var planet1;
+  var planet2;
+  var planet3;
+  beforeEach(function(){
+
+    planet1 = new Planet({
+      id: 0,
+      name: "Mercury", 
+      description: "The Swiftest Planet",
+      distanceToSun: 0.39,
+      moonValue: 0});
+    planet2 = new Planet({id: 1, name: "Venus", description: "Planetary Hot Spot", distanceToSun: 0.72, moonValue: 0});
+    planet3 = new Planet({id: 2, name: "Earth", description: "Our Home Planet", distanceToSun: 1, moonValue: 1});
+
+  });
 
 
   it('planet should have an id', function(){
@@ -20,7 +25,7 @@ describe('Planet', function(){
   });
 
   it('planet should have a name', function(){
-    assert.equal("Earth", planet2.name);
+    assert.equal("Venus", planet2.name);
   });
 
   it('planet should have a description', function(){
@@ -32,7 +37,7 @@ describe('Planet', function(){
   });
 
   it('planet should have a moon value', function(){
-    assert.equal(0, planet.moonValue);
+    assert.equal(1, planet3.moonValue);
   });
 
 
