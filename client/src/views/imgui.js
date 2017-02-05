@@ -11,10 +11,12 @@ var ImgUI = function() {
 
 ImgUI.prototype = {
 
-    createImage: function(url) {
+    createImage: function(url, distance) {
         var img = document.createElement('img');
+        img.style = "left: " + distance*1000 + "px"
         img.className = "planet"
         img.src = url;
+
         return img;
     },
 
@@ -46,7 +48,7 @@ ImgUI.prototype = {
         
         
         for (var planet of planets) {
-            var img = this.createImage(planet.getImage());
+            var img = this.createImage(planet.getImage(), planet.distanceToSun);
             this.clickImage(img, planet);
             main.appendChild(img);
         }

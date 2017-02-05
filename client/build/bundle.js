@@ -94,9 +94,11 @@ module.exports = planet;
 /***/ (function(module, exports, __webpack_require__) {
 
 var imgUI = __webpack_require__(4);
+var navUI = __webpack_require__(5);
 
 var UI = function() {
     new imgUI();
+    new navUI();
 }
 
 module.exports = UI;
@@ -179,10 +181,12 @@ var ImgUI = function() {
 
 ImgUI.prototype = {
 
-    createImage: function(url) {
+    createImage: function(url, distance) {
         var img = document.createElement('img');
+        img.style = "left: " + distance*1000 + "px"
         img.className = "planet"
         img.src = url;
+
         return img;
     },
 
@@ -214,7 +218,7 @@ ImgUI.prototype = {
         
         
         for (var planet of planets) {
-            var img = this.createImage(planet.getImage());
+            var img = this.createImage(planet.getImage(), planet.distanceToSun);
             this.clickImage(img, planet);
             main.appendChild(img);
         }
@@ -224,6 +228,34 @@ ImgUI.prototype = {
 }
 
 module.exports = ImgUI;
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var Planets = __webpack_require__(2);
+var Planet = __webpack_require__(0);
+
+var navUI = function() {
+    this.planets = new Planets;
+
+    this.planets.all(function(result) {
+        this.render(result);
+    }.bind(this))
+}
+
+navUI.prototype = {
+
+	render: function() {
+		var nav = document.createElement('nav');
+		var body = document.querySelector('body');
+
+		body.appendChild(nav);
+	}
+
+}
+
+module.exports = navUI;
 
 /***/ })
 /******/ ]);

@@ -35,11 +35,25 @@
     cursor: pointer;
 }
 
+body {
+    margin: 0;
+}
+
 main {
     display: inline-block;
     white-space: nowrap;
+    position: absolute;
 }
 
 .planet {
-    margin-right: 200px;
+    position: relative;
+}
+
+nav {
+    height: 50px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 1;
+    background-color: black;
 }
