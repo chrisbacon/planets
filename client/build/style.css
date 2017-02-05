@@ -34,3 +34,12 @@
     text-decoration: none;
     cursor: pointer;
 }
+
+main {
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.planet {
+    margin-right: 200px;
+}
