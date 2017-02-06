@@ -13,12 +13,13 @@ var navUI = function() {
 
 navUI.prototype = {
 
-	createImage: function(url, distance) {
-		console.log(distance)
+	createImage: function(url, distance, offset) {
+
         var img = document.createElement('img');
-        img.style.left = distance + "px"
-        img.className = "planet"
+        img.style.marginLeft = distance + "px"
+        img.className = "planetIcon";
         img.style.height = "20px";
+        img.style.left = -offset + "px";
         img.src = url;
 
         return img;
@@ -32,38 +33,44 @@ navUI.prototype = {
 		var body = document.querySelector('body');
 
 		marker.id = 'marker';
+        marker.innerText = "m";
 
-		container.appendChild(marker);
+
+		nav.appendChild(marker);
 		container.id = "navContainer"
 
 		nav.appendChild(container);
 		body.appendChild(nav);
-		console.log(container.offsetWidth, planets[7].distanceToSun);
+		// console.log(container.offsetWidth, planets[7].distanceToSun);
 
 		var containerWidth = container.offsetWidth;
 		var furthestPlanet = planets[7].distanceToSun;
 
-		var distScale = containerWidth / furthestPlanet;
-		console.log(distScale);
+		var distScale = containerWidth/furthestPlanet;
 
+    var prevDistance = 0;
+		
 		for (var i=0; i<planets.length; i++) {
 			var planet = planets[i];
-			var img = this.createImage(planet.image, planet.distanceToSun*distScale - i*20);
-            container.appendChild(img);
+			var img = this.createImage(planet.image, ((planet.distanceToSun - prevDistance)*distScale), (2*i+1)*10);
+      container.appendChild(img);
+
+      prevDistance = planet.distanceToSun;
+
 		}
+
+    marker.style.left = container.offsetLeft + "px"
 	},
 
 	updateNavBar: function() {
 		
 		var main = document.querySelector('main');
 		var navContainer = document.querySelector('#navContainer');
-		var marker = document.querySelector('#marker')
+		var marker = document.querySelector('#marker');
 
 		var mainWidth = main.offsetWidth;
 		var navWidth = navContainer.offsetWidth;
 		var xPos = window.scrollX;
-
-		console.log(navWidth);
 
 		marker.style.left = (xPos*navWidth/mainWidth) + "px";
 
