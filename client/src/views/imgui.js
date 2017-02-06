@@ -48,7 +48,7 @@ ImgUI.prototype = {
         
         
         for (var planet of planets) {
-            var img = this.createImage(planet.getImage(), planet.distanceToSun);
+            var img = this.createImage(planet.image, planet.distanceToSun);
             this.clickImage(img, planet);
             main.appendChild(img);
         }

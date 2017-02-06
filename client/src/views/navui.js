@@ -46,9 +46,9 @@ navUI.prototype = {
 		var distScale = containerWidth / furthestPlanet;
 		console.log(distScale);
 
-		for (var i=1; i<=planets.length; i++) {
+		for (var i=0; i<planets.length; i++) {
 			var planet = planets[i];
-			var img = this.createImage(planet.getImage(), planet.distanceToSun*distScale - i*20);
+			var img = this.createImage(planet.image, planet.distanceToSun*distScale - i*20);
             container.appendChild(img);
 		}
 	},
