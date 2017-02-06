@@ -13,12 +13,12 @@ var navUI = function() {
 
 navUI.prototype = {
 
-	createImage: function(url, distance) {
-		console.log(distance)
+	createImage: function(url, distance, offset) {
         var img = document.createElement('img');
         img.style.marginLeft = distance + "px"
-        img.className = "planet"
+        img.className = "planetIcon";
         img.style.height = "20px";
+        img.style.left = -offset + "px";
         img.src = url;
 
         return img;
@@ -32,9 +32,10 @@ navUI.prototype = {
 		var body = document.querySelector('body');
 
 		marker.id = 'marker';
-        marker.innerText = "marker";
+        marker.innerText = "m";
 
-		container.appendChild(marker);
+
+		nav.appendChild(marker);
 		container.id = "navContainer"
 
 		nav.appendChild(container);
@@ -44,17 +45,21 @@ navUI.prototype = {
 		var containerWidth = container.offsetWidth;
 		var furthestPlanet = planets[7].distanceToSun;
 
-		var distScale = containerWidth / furthestPlanet;
-		console.log(distScale);
+		var distScale = containerWidth/furthestPlanet;
 
         var prevDistance = 0;
 		for (var i=0; i<planets.length; i++) {
+
 			var planet = planets[i];
-			var img = this.createImage(planet.getImage(), planet.distanceToSun*distScale - prevDistance);
+            console.log(planet.distanceToSun*distScale);
+			var img = this.createImage(planet.getImage(), ((planet.distanceToSun - prevDistance)*distScale), (2*i+1)*10);
             container.appendChild(img);
 
             prevDistance = planet.distanceToSun;
+
 		}
+
+        marker.style.left = container.offsetLeft + "px"
 	},
 
 	updateNavBar: function() {
@@ -66,8 +71,6 @@ navUI.prototype = {
 		var mainWidth = main.offsetWidth;
 		var navWidth = navContainer.offsetWidth;
 		var xPos = window.scrollX;
-
-		console.log(xPos/mainWidth);
 
 		marker.style.left = (xPos*navWidth/mainWidth) + "px";
 
