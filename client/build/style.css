@@ -37,6 +37,7 @@
 
 body {
     margin: 0;
+    background-image: url('images/starmap.png')
 }
 
 main {
@@ -45,6 +46,7 @@ main {
     position: absolute;
     overflow: auto;
     padding-right: 1200px;
+
 }
 
 .planet {

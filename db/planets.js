@@ -2,8 +2,17 @@ var Planet = require('../client/src/models/planet');
 
 var PlanetsDB = function(){
 
-    var planet1 = new Planet({
+    var planet0 = new Planet({
         id: 0,
+        name: "Sun",
+        overview: "Big, bright and Hot",
+        image: "images/Sun.png",
+        description: "That big bright thing in the sky that we offer sacrifices to.  Our sun is a yellow dwarf.  Not that it's small.  At 1,392,684 km in diameter and with a circumference of 4,370,005 km you could fit 960,000 Earth-sized sqheres inside it!!  Boy it's hot there too! At the surface it's a balmy 5500℃.  Our sun is approximately 4.6 Billion years old.",
+        distanceToSun: 0.0,
+        moonValue: 0
+    });
+    var planet1 = new Planet({
+        id: 1,
         name: "Mercury",
         overview: "The Swiftest Planet",
         image: "images/mercury.png",
@@ -13,7 +22,7 @@ var PlanetsDB = function(){
     });
 
     var planet2 = new Planet({
-        id: 1,
+        id: 2,
         name: "Venus",
         overview: "Planetary Hot Spot",
         image: "images/venus.png",
@@ -23,7 +32,7 @@ var PlanetsDB = function(){
     });
 
     var planet3 = new Planet({
-        id: 2,
+        id: 3,
         name: "Earth",
         overview: "Our Home Planet",
         image: "images/earth.png",
@@ -33,7 +42,7 @@ var PlanetsDB = function(){
     });
 
     var planet4 = new Planet({
-        id: 3,
+        id: 4,
         name: "Mars",
         overview: "The Red Planet",
         image: "images/mars.png",
@@ -44,7 +53,7 @@ var PlanetsDB = function(){
     
 
     var planet5 = new Planet({
-        id: 4,
+        id: 5,
         name: "Jupiter",
         overview: "King of the Planets",
         image: "images/jupiter.png",
@@ -55,7 +64,7 @@ var PlanetsDB = function(){
 
 
     var planet6 = new Planet({
-        id: 5,
+        id: 6,
         name: "Saturn",
         overview: "Jewel of Our Solar System",
         image: "images/saturn.png",
@@ -66,7 +75,7 @@ var PlanetsDB = function(){
 
 
     var planet7 = new Planet({
-        id: 6,
+        id: 7,
         name: "Uranus",
         overview: "The Sideways Planet",
         image: "images/uranus.png",
@@ -77,7 +86,7 @@ var PlanetsDB = function(){
 
 
     var planet8 = new Planet({
-        id: 7,
+        id: 8,
         name: "Neptune",
         overview: "The Windiest Planet",
         image: "images/neptune.png",
@@ -86,7 +95,7 @@ var PlanetsDB = function(){
         moonValue: 14
     });
 
-    return [planet1, planet2, planet3, planet4, planet5, planet6, planet7, planet8];
+    return [planet0, planet1, planet2, planet3, planet4, planet5, planet6, planet7, planet8];
 }
 
 module.exports = PlanetsDB;

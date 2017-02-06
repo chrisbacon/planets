@@ -5,6 +5,7 @@ this.overview = options.overview;
 this.distanceToSun = options.distanceToSun;
 this.moonValue = options.moonValue;
 this.image = options.image;
+this.description = options.description;
 
 };
 
