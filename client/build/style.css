@@ -37,12 +37,13 @@
 
 body {
     margin: 0;
+    background-image: url('images/starmap.png')
 }
 
 main {
     display: inline-block;
     white-space: nowrap;
-    position: absolute;
+    position: absolute; 
 }
 
 .planet {
