@@ -13,12 +13,8 @@ var navUI = function() {
 
 navUI.prototype = {
 
-<<<<<<< HEAD
 	createImage: function(url, distance, offset) {
-=======
-	createImage: function(url, distance) {
-		// console.log(distance)
->>>>>>> feature/box_position
+
         var img = document.createElement('img');
         img.style.marginLeft = distance + "px"
         img.className = "planetIcon";
@@ -50,18 +46,11 @@ navUI.prototype = {
 		var containerWidth = container.offsetWidth;
 		var furthestPlanet = planets[7].distanceToSun;
 
-<<<<<<< HEAD
 		var distScale = containerWidth/furthestPlanet;
 
         var prevDistance = 0;
 		for (var i=0; i<planets.length; i++) {
 
-=======
-		var distScale = containerWidth / furthestPlanet;
-		// console.log(distScale);
-    
-		for (var i=1; i<=planets.length; i++) {
->>>>>>> feature/box_position
 			var planet = planets[i];
             console.log(planet.distanceToSun*distScale);
 			var img = this.createImage(planet.getImage(), ((planet.distanceToSun - prevDistance)*distScale), (2*i+1)*10);
@@ -84,11 +73,6 @@ navUI.prototype = {
 		var navWidth = navContainer.offsetWidth;
 		var xPos = window.scrollX;
 
-<<<<<<< HEAD
-=======
-		// console.log(navWidth);
-
->>>>>>> feature/box_position
 		marker.style.left = (xPos*navWidth/mainWidth) + "px";
 
 	}
