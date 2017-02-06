@@ -24,7 +24,7 @@ planets.prototype = {
             var jsonString = this.responseText;
             var results = JSON.parse(jsonString);
 
-            console.log(results);
+            // console.log(results);
             var planets = self.populatePlanets(results.data);
             callback(planets);
         });

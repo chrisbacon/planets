@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -93,20 +93,6 @@ module.exports = planet;
 /* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var imgUI = __webpack_require__(4);
-var navUI = __webpack_require__(5);
-
-var UI = function() {
-    new imgUI();
-    new navUI();
-}
-
-module.exports = UI;
-
-/***/ }),
-/* 2 */
-/***/ (function(module, exports, __webpack_require__) {
-
 var Planet = __webpack_require__(0);
 
 var planets = function() {
@@ -133,7 +119,7 @@ planets.prototype = {
             var jsonString = this.responseText;
             var results = JSON.parse(jsonString);
 
-            console.log(results);
+            // console.log(results);
             var planets = self.populatePlanets(results.data);
             callback(planets);
         });
@@ -153,22 +139,24 @@ planets.prototype = {
 module.exports = planets;
 
 /***/ }),
+/* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var imgUI = __webpack_require__(3);
+var navUI = __webpack_require__(4);
+
+var UI = function() {
+    new imgUI();
+    new navUI();
+}
+
+module.exports = UI;
+
+/***/ }),
 /* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var UI = __webpack_require__(1);
-
-var app = function(){
-  new UI();
-}
-
-window.onload = app;
-
-/***/ }),
-/* 4 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var Planets = __webpack_require__(2);
+var Planets = __webpack_require__(1);
 var Planet = __webpack_require__(0);
 
 var ImgUI = function() {
@@ -181,48 +169,76 @@ var ImgUI = function() {
 
 ImgUI.prototype = {
 
-    createImage: function(url, distance) {
+    createImage: function(url) {
+        var main = document.querySelector('main');
         var img = document.createElement('img');
-        img.style.left = distance*1000 + "px"
+        var imageDiv = document.createElement('div');
+        imageDiv.className = ('imageDiv')
+        
         img.className = "planet"
         img.src = url;
 
-        return img;
+        imageDiv.appendChild(img);
+        main.appendChild(imageDiv);
+
+        return imageDiv;
     },
 
-    clickImage: function(img, planet) {
-        var body = document.querySelector('body')
-        var div = document.querySelector('#popupBox')
-        var span = document.getElementsByClassName('close')[0];
-        var p = document.querySelector('p')
+    imageSpacing: function(distance) {
+        var imgDiv = document.querySelector('#imgDiv');
+        imgDiv.style.left = distance*1000 + "px"
+    },
+
+
+    clickImage: function(imageDiv, planet) {
+        var self = this;
       
-        img.onclick = function() {
-            div.style.display = 'block';
+        imageDiv.onclick = function() {
+
+            var popupDiv = document.createElement('div')
+            popupDiv.className = ('popupBox');
+            var span = document.createElement('span');
+            span.className = ('close');
+            console.log('span', span)
+            var p = document.createElement('p');
+            
+            popupDiv.style.display = 'block';
+            span.innerHTML = '&times'
             p.innerText = planet.name + "\n" + planet.overview + "\n" + "Number of Moons: " + planet.moonValue + "\n" + "Distance from the sun: " + planet.distanceToSun + "AU";
-        }
+           this.appendChild(popupDiv);
+           popupDiv.appendChild(span);
+           popupDiv.appendChild(p);
+           // self.closeBox();
+           this.onclick = null;
 
-        span.onclick = function() {
-            div.style.display = 'none';
-        }
+           span.onclick = function() {
+            popupDiv.style.display = 'none';
+               console.log(event);
+           }
 
-        window.onclick = function(event) {
-            if(event.target == div) {
-                div.style.display = 'none';
-            }
+           // window.onclick = function(event) {
+           //     if(event.target != popupDiv) {
+           //         popupDiv.style.display = 'none';
+           //     }
+           // }
+
         }
-         
     },
 
     render: function(planets) {
         var main = document.querySelector('main');
-        
-        
+       
+     
         for (var planet of planets) {
-            var img = this.createImage(planet.getImage(), planet.distanceToSun);
-            this.clickImage(img, planet);
-            main.appendChild(img);
+            
+            var imageDiv = this.createImage(planet.getImage());
+            // this.imageSpacing(planet.distanceToSun);
+           
+            this.clickImage(imageDiv, planet);
+           
+           
         }
-
+        
     }
 
 }
@@ -230,10 +246,10 @@ ImgUI.prototype = {
 module.exports = ImgUI;
 
 /***/ }),
-/* 5 */
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Planets = __webpack_require__(2);
+var Planets = __webpack_require__(1);
 var Planet = __webpack_require__(0);
 
 var navUI = function() {
@@ -249,7 +265,7 @@ var navUI = function() {
 navUI.prototype = {
 
 	createImage: function(url, distance) {
-		console.log(distance)
+		// console.log(distance)
         var img = document.createElement('img');
         img.style.left = distance + "px"
         img.className = "planet"
@@ -273,14 +289,14 @@ navUI.prototype = {
 
 		nav.appendChild(container);
 		body.appendChild(nav);
-		console.log(container.offsetWidth, planets[7].distanceToSun);
+		// console.log(container.offsetWidth, planets[7].distanceToSun);
 
 		var containerWidth = container.offsetWidth;
 		var furthestPlanet = planets[7].distanceToSun;
 
 		var distScale = containerWidth / furthestPlanet;
-		console.log(distScale);
-
+		// console.log(distScale);
+    
 		for (var i=1; i<=planets.length; i++) {
 			var planet = planets[i];
 			var img = this.createImage(planet.getImage(), planet.distanceToSun*distScale - i*20);
@@ -298,7 +314,7 @@ navUI.prototype = {
 		var navWidth = navContainer.offsetWidth;
 		var xPos = window.scrollX;
 
-		console.log(navWidth);
+		// console.log(navWidth);
 
 		marker.style.left = (xPos*navWidth/mainWidth) + "px";
 
@@ -307,6 +323,18 @@ navUI.prototype = {
 }
 
 module.exports = navUI;
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var UI = __webpack_require__(2);
+
+var app = function(){
+  new UI();
+}
+
+window.onload = app;
 
 /***/ })
 /******/ ]);
