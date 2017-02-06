@@ -9,19 +9,20 @@ describe('Planet', function(){
   beforeEach(function(){
 
     planet1 = new Planet({
-      planetId: 0,
+      id: 1,
       name: "Mercury", 
       overview: "The Swiftest Planet",
-      distance_from_sun: 0.39,
-      number_of_moons: 0});
-    planet2 = new Planet({planetId: 1, name: "Venus", overview: "Planetary Hot Spot", distance_from_sun: 0.72, number_of_moons: 0});
-    planet3 = new Planet({planetId: 2, name: "Earth", overview: "Our Home Planet", distance_from_sun: 1, number_of_moons: 1});
+      distanceToSun: 0.39,
+      moonValue: 0,
+      description: "Description"});
+    planet2 = new Planet({id: 1, name: "Venus", overview: "Planetary Hot Spot", distanceToSun: 0.72, moonValue: 0, description: "Description"});
+    planet3 = new Planet({id: 2, name: "Earth", overview: "Our Home Planet", distanceToSun: 1, moonValue: 1, description: "Description"});
 
   });
 
 
   it('planet should have an id', function(){
-    assert.equal(0, planet1.id);
+    assert.equal(1, planet1.id);
   });
 
   it('planet should have a name', function(){
@@ -43,6 +44,10 @@ describe('Planet', function(){
   it('get image', function() {
     assert.equal("/images/planet1.png", planet2.getImage());
   });
+
+  it('has description', function() {
+    assert.equal("Description", planet1.description);
+  })
 
 
 
