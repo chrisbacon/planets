@@ -13,7 +13,7 @@ ImgUI.prototype = {
 
     createImage: function(url, distance) {
         var img = document.createElement('img');
-        img.style = "left: " + distance*1000 + "px"
+        img.style.left = distance*1000 + "px"
         img.className = "planet"
         img.src = url;
 
