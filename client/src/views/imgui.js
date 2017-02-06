@@ -3,7 +3,7 @@ var Planet = require('../models/planet');
 
 var ImgUI = function() {
     this.planets = new Planets;
-
+    this.clicked = false;
     this.planets.all(function(result) {
         this.render(result);
     }.bind(this))
@@ -38,7 +38,7 @@ ImgUI.prototype = {
         var self = this;
       
         imageDiv.onclick = function() {
-
+            if (self.clicked) {
             var popupDiv = document.createElement('div')
             popupDiv.className = ('popupBox');
             var span = document.createElement('span');
@@ -53,25 +53,31 @@ ImgUI.prototype = {
            popupDiv.appendChild(span);
            popupDiv.appendChild(p);
            // self.closeBox();
-           this.onclick = null;
+           // if (popupDiv.style.display === 'block'){
+           // return this.onclick = null;
+            
 
            span.onclick = function() {
             popupDiv.style.display = 'none';
-               console.log(event);
+            self.clicked = false;
+        }
+        } else {
+            self.clicked = true;
+               
            }
 
            // window.onclick = function(event) {
            //     if(event.target != popupDiv) {
            //         popupDiv.style.display = 'none';
            //     }
-           // }
+           }
 
-        }
-    },
+        },
 
     render: function(planets) {
         
         var prevDistance = 0
+
 
         for (var i=0; i<planets.length; i++) {
             var planet = planets[i]
