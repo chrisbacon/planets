@@ -16,7 +16,7 @@ navUI.prototype = {
 	createImage: function(url, distance) {
 		console.log(distance)
         var img = document.createElement('img');
-        img.style.left = distance + "px"
+        img.style.marginLeft = distance + "px"
         img.className = "planet"
         img.style.height = "20px";
         img.src = url;
@@ -32,6 +32,7 @@ navUI.prototype = {
 		var body = document.querySelector('body');
 
 		marker.id = 'marker';
+        marker.innerText = "marker";
 
 		container.appendChild(marker);
 		container.id = "navContainer"
@@ -46,10 +47,13 @@ navUI.prototype = {
 		var distScale = containerWidth / furthestPlanet;
 		console.log(distScale);
 
-		for (var i=1; i<=planets.length; i++) {
+        var prevDistance = 0;
+		for (var i=0; i<planets.length; i++) {
 			var planet = planets[i];
-			var img = this.createImage(planet.getImage(), planet.distanceToSun*distScale - i*20);
+			var img = this.createImage(planet.getImage(), planet.distanceToSun*distScale - prevDistance);
             container.appendChild(img);
+
+            prevDistance = planet.distanceToSun;
 		}
 	},
 
@@ -57,13 +61,13 @@ navUI.prototype = {
 		
 		var main = document.querySelector('main');
 		var navContainer = document.querySelector('#navContainer');
-		var marker = document.querySelector('#marker')
+		var marker = document.querySelector('#marker');
 
 		var mainWidth = main.offsetWidth;
 		var navWidth = navContainer.offsetWidth;
 		var xPos = window.scrollX;
 
-		console.log(navWidth);
+		console.log(xPos/mainWidth);
 
 		marker.style.left = (xPos*navWidth/mainWidth) + "px";
 

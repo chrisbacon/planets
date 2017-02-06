@@ -40,13 +40,14 @@ body {
 }
 
 main {
-    display: inline-block;
-    white-space: nowrap;
+    display: flex;
+    flex-wrap: nowrap;
     position: absolute;
+    overflow: auto;
 }
 
 .planet {
-    position: relative;
+    flex-shrink: 0;
 }
 
 nav {
@@ -63,6 +64,7 @@ nav {
 
 nav div {
     width: 60%;
+    display: flex;
 }
 
 #marker {
