@@ -36,37 +36,87 @@ QuizUI.prototype = {
         var body = document.querySelector('body');
         body.appendChild(overlay);
 
-        this.populateOverlay(overlay);
+        this.populateWelcome();
     }, 
 
-    populateOverlay: function(overlay) {
-        overlay.innerText = "HELLO...welcome to the overlay!!"
-
+    createSubmitButton: function() {
         var submit = document.createElement('button');
         submit.innerText = "Submit";
         submit.id = "submit";
 
-        submit.onclick = this.loadQuestion.bind(this);
+        submit.onclick = this.loadNextScreen.bind(this);
+
+        return submit;
+    },
+
+    populateWelcome: function() {
+        overlay.innerText = "HELLO...welcome to the overlay!!"
+
+        var submit = this.createSubmitButton();
 
         overlay.appendChild(submit);
     },
 
-    loadQuestion: function() {
+    loadNextScreen: function() {
         //is quiz finished? If so go to end()
         //get question off quizmaster and display it. 
         //set onclicks to checkAnswer()
         console.log('question Loaded!')
-        if (false) {
+        var quizRunning = true;
 
+        if (quizRunning) {
+            this.populateWithQuestion({question: "What planet are we on", choices: ["Mars", "Earth", "Venus"], correct: "Earth"});
         } else {
             this.end();
         }
+    },
+
+    createRadioInput: function(choice) {
+        var input = document.createElement('input');
+        input.value = choice;
+        input.type = "radio"
+        name = "choice";
+
+        return input;
+    },
+
+    createLabel: function(choice) {
+        var label = document.createElement('label');
+        label.for = choice;
+        label.innerText = choice;
+
+        return label;
+    },
+
+    populateWithQuestion: function(question) {
+        var overlay = document.querySelector('#overlay');
+        overlay.innerHTML = "";
+
+        var text = document.createElement('p');
+        text.innerText = question.question;
+        overlay.appendChild(text);
+
+        var form = document.createElement('form');
+        overlay.appendChild(form);
+
+
+
+        for (var choice of question.choices) {
+            var input = this.createRadioInput(choice);
+            var label = this.createLabel(choice);
+            form.appendChild(input);
+            form.appendChild(label);
+        }
+
+        form.appendChild(this.createSubmitButton())
+
     },
 
     checkAnswer: function() {
         //ask quizmaster if answer was correct
         //display yes/no + answer blurb
         //load next question
+        //quizmaster.checkAnswer(answer)
     },
 
     end: function() {
