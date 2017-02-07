@@ -72,6 +72,7 @@ navUI.prototype = {
 		var navWidth = navContainer.offsetWidth;
 		var xPos = window.scrollX;
 
+
 		marker.style.left = (xPos*navWidth/mainWidth) + "px";
 
 	}

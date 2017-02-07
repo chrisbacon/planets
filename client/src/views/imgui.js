@@ -28,51 +28,37 @@ ImgUI.prototype = {
         return imageDiv;
     },
 
-    imageSpacing: function(distance) {
-        var imgDiv = document.querySelector('#imgDiv');
-        imgDiv.style.left = distance*1000 + "px"
-    },
-
-
     clickImage: function(imageDiv, planet) {
-        var self = this;
-      
-        imageDiv.onclick = function() {
-            if (self.clicked) {
+
+        var state1 = function() {
             var popupDiv = document.createElement('div')
             popupDiv.className = ('popupBox');
             var span = document.createElement('span');
             span.className = ('close');
-            console.log('span', span)
             var p = document.createElement('p');
-            
+
             popupDiv.style.display = 'block';
-            span.innerHTML = '&times'
+            span.innerHTML = '&times';
             p.innerText = planet.name + "\n" + planet.overview + "\n" + "Number of Moons: " + planet.moonValue + "\n" + "Distance from the sun: " + planet.distanceToSun + "AU";
-           this.appendChild(popupDiv);
-           popupDiv.appendChild(span);
-           popupDiv.appendChild(p);
-           // self.closeBox();
-           // if (popupDiv.style.display === 'block'){
-           // return this.onclick = null;
+            imageDiv.appendChild(popupDiv);
+            popupDiv.appendChild(span);
+            popupDiv.appendChild(p);
+
+            imageDiv.onclick = null;
+
+            span.onclick = function(event) {
+                event.stopPropagation();
+                imageDiv.removeChild(popupDiv);
+                imageDiv.onclick = state1;
+            }
+
+
             
-
-           span.onclick = function() {
-            popupDiv.style.display = 'none';
-            self.clicked = false;
         }
-        } else {
-            self.clicked = true;
-               
-           }
 
-           // window.onclick = function(event) {
-           //     if(event.target != popupDiv) {
-           //         popupDiv.style.display = 'none';
-           //     }
-           }
+        imageDiv.onclick = state1; 
 
-        },
+    },
 
     render: function(planets) {
         
@@ -84,7 +70,6 @@ ImgUI.prototype = {
             var planet = planets[i]
             var imgDiv = this.createImage(planet.image, (planet.distanceToSun - prevDistance)*1000, (2*i + 1)*174);
             this.clickImage(imgDiv, planet);
-            // main.appendChild(img);
 
             prevDistance = planet.distanceToSun
 
