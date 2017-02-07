@@ -42,10 +42,20 @@ QuizUI.prototype = {
 
         body.appendChild(cover);
 
+        var span = document.createElement('span');
+        span.className = ('close');
+        span.innerHTML = '&times'
+
+        span.onclick = function() {
+            body.removeChild(overlay);
+            body.removeChild(cover);
+            body.className = "";
+        }
 
         var content = document.createElement('div');
         content.id = "content";
 
+        overlay.appendChild(span);
         overlay.appendChild(content);
 
         var body = document.querySelector('body');
