@@ -26,7 +26,7 @@ Planets.prototype = {
 
             // console.log(results);
             var planets = self.populatePlanets(results.data);
-            console.log(planets);
+            // console.log(planets);
             callback(planets);
         });
     },
