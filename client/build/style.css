@@ -9,8 +9,8 @@
     margin-left: 30px;*/
     float: right;
     z-index: 100;
-    width: 60%; 
-    height: 30%; 
+    width: 200; 
+    height: 150; 
     overflow: auto; 
     background-color: rgb(0,0,0); 
     background-color: rgba(179, 230, 201, 0.4);
@@ -25,7 +25,7 @@
     white-space: nowrap;
     position: relative;
     border: 2px solid white;
-    align-content: center;
+    /*align-content: center;*/
 
 
 }
