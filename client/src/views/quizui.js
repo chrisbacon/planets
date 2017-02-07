@@ -29,9 +29,19 @@ QuizUI.prototype = {
         }.bind(this))
 
         //create overlaying div, populate welcome screen
+
+
+        var body = document.querySelector('body');
+        body.className = "quizOpen";
         
         var overlay = document.createElement('div');
         overlay.id = "overlay";
+
+        var cover = document.createElement('div');
+        cover.id = "cover";
+
+        body.appendChild(cover);
+
 
         var content = document.createElement('div');
         content.id = "content";
