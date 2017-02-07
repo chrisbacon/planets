@@ -1,10 +1,10 @@
 var Planet = require('./planet');
 
-var planets = function() {
+var Planets = function() {
 
 };
 
-planets.prototype = {
+Planets.prototype = {
 
     makeRequest: function (url, callback) {
       var request = new XMLHttpRequest();
@@ -42,4 +42,4 @@ planets.prototype = {
 
 }
 
-module.exports = planets;
+module.exports = Planets;

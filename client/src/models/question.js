@@ -7,7 +7,7 @@ var Question = function(options){
 
 Question.prototype = {
 
-  checkAnswer: function(input){
+  checkAnswer: function(input) {
     return input == this.correctAnswer;
   }
 }

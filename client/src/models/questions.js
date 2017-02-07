@@ -1,10 +1,10 @@
 var Question = require('./question');
 
-var questions = function() {
+var Questions = function() {
 
 };
 
-questions.prototype = {
+Questions.prototype = {
 
     makeRequest: function (url, callback) {
       var request = new XMLHttpRequest();
@@ -25,13 +25,13 @@ questions.prototype = {
             var results = JSON.parse(jsonString);
 
             // console.log(results);
-            var questions = self.populatePlanets(results.data);
+            var questions = self.populateQuestions(results.data);
             console.log(questions);
             callback(questions);
         });
     },
 
-    populatePlanets: function(results) {
+    populateQuestions: function(results) {
         var questions = [];
         for (var result of results) {
             var questions = new Question(result);
@@ -40,3 +40,5 @@ questions.prototype = {
         return questions;
     }   
 }
+
+module.exports = Questions;

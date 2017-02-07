@@ -134,3 +134,9 @@ nav div {
       
     border-top: 4px solid #f00;
 }
+
+#quizStart {
+    position: fixed;
+    right: 5px;
+    top: 5px;
+}
