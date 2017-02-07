@@ -259,7 +259,7 @@ var quiz = [{
    "350,000 km/s"
   ],
   "correct": "300,000 km/s",
-  "answer blurb": "Light travels at approximately 300,000 km/s in a vacuum, however its speed varies depending on the medium is travels through. For instance, its speed through water is around 225,000 km/s."
+  "answer blurb": "Light travels at approximately 300,000 km/s in a vacuum, however its speed varies depending on the medium it travels through. For instance, its speed through water is around 225,000 km/s."
 }]
 
 
