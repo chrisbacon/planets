@@ -76,12 +76,13 @@ ImgUI.prototype = {
 
     render: function(planets) {
         
+
         var prevDistance = 0
 
 
         for (var i=0; i<planets.length; i++) {
             var planet = planets[i]
-            var imgDiv = this.createImage(planet.getImage(), (planet.distanceToSun - prevDistance)*1000, (2*i + 1)*174);
+            var imgDiv = this.createImage(planet.image, (planet.distanceToSun - prevDistance)*1000, (2*i + 1)*174);
             this.clickImage(imgDiv, planet);
             // main.appendChild(img);
 

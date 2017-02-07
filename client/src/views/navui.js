@@ -48,19 +48,18 @@ navUI.prototype = {
 
 		var distScale = containerWidth/furthestPlanet;
 
-        var prevDistance = 0;
+    var prevDistance = 0;
+		
 		for (var i=0; i<planets.length; i++) {
-
 			var planet = planets[i];
-            console.log(planet.distanceToSun*distScale);
-			var img = this.createImage(planet.getImage(), ((planet.distanceToSun - prevDistance)*distScale), (2*i+1)*10);
-            container.appendChild(img);
+			var img = this.createImage(planet.image, ((planet.distanceToSun - prevDistance)*distScale), (2*i+1)*10);
+      container.appendChild(img);
 
-            prevDistance = planet.distanceToSun;
+      prevDistance = planet.distanceToSun;
 
 		}
 
-        marker.style.left = container.offsetLeft + "px"
+    marker.style.left = container.offsetLeft + "px"
 	},
 
 	updateNavBar: function() {

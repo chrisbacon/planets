@@ -4,7 +4,8 @@
   "main": "server.js",
   "scripts": {
     "test": "mocha client/src/models/specs/*",
-    "start": "node server.js"
+    "start": "node server.js",
+    "bundle": "cd client && webpack -w"
   },
   "repository": {
     "type": "git",
@@ -23,7 +24,8 @@
   },
   "dependencies": {
     "body-parser": "^1.16.0",
-    "express": "^4.14.1"
+    "express": "^4.14.1",
+    "mongodb": "^2.2.22"
   },
   "keywords": [],
   "description": ""
