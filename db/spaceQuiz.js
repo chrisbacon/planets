@@ -6,7 +6,7 @@ var quiz = [{
     "8",
     "9"
   ],
-  "correct": "8",
+  "correctAnswer": "8",
   "answerBlurb": "There are 8 known planets in our solar system."
 },
 
@@ -18,7 +18,7 @@ var quiz = [{
     "157,600 km",
     "502,600 km"
   ],
-  "correct": "384,400 km",
+  "correctAnswer": "384,400 km",
   "answerBlurb": "The moon is 384,400 km from the Earth."
 },
 
@@ -30,7 +30,7 @@ var quiz = [{
    "120-124 million km",
    "147-152 million km"
   ],
-  "correct": "147-152 million km",
+  "correctAnswer": "147-152 million km",
   "answerBlurb": "The Earth's orbit is elliptical, meaning it can be anywhere between 147 million and 152 million km away from the Sun at any given time."
 },
 
@@ -42,7 +42,7 @@ var quiz = [{
    "Astronomical Unity",
    "Astral Unity"
   ],
-  "correct": "Astronomical Unit",
+  "correctAnswer": "Astronomical Unit",
   "answerBlurb": "AU stands for Astronomical Unit, or the average distance between the Earth and the Sun."
 },
 
@@ -54,7 +54,7 @@ var quiz = [{
    "Mars",
    "Jupiter"
   ],
-  "correct": "Venus",
+  "correctAnswer": "Venus",
   "answerBlurb": "Venus has a surface temperature of 462 degrees celcius, higher than Mercury's at 430 degrees celcius. This is due to Venus' thick atmosphere which retains heat."
 },
 
@@ -66,7 +66,7 @@ var quiz = [{
    "Neptune",
    "Jupiter"
   ],
-  "correct": "Jupiter",
+  "correctAnswer": "Jupiter",
   "answerBlurb": "Jupiter is the largest planet in the solar system, having a mass that is 2.5 times larger than every other planet's mass combined!"
 },
 
@@ -78,7 +78,7 @@ var quiz = [{
    "Neptune",
    "Mars"
   ],
-  "correct": "Mercury",
+  "correctAnswer": "Mercury",
   "answerBlurb": "Mercury is the smallest planet in the solar system, having a diameter only 1.4 times larger than our Moon."
 },
 
@@ -90,7 +90,7 @@ var quiz = [{
    "67",
    "74"
   ],
-  "correct": "67",
+  "correctAnswer": "67",
   "answerBlurb": "Jupiter has 67 moons, the highest number out of all of the planets in our solar system."
 },
 
@@ -102,7 +102,7 @@ var quiz = [{
    "Meteor",
    "Planet"
   ],
-  "correct": "Dwarf planet",
+  "correctAnswer": "Dwarf planet",
   "answerBlurb": "Pluto was recently reclassified as a dwarf planet rather than a planet."
 },
 
@@ -114,7 +114,7 @@ var quiz = [{
    "1957",
    "1969"
   ],
-  "correct": "1969",
+  "correctAnswer": "1969",
   "answerBlurb": "The first mission to land on the moon was successfully launched in 1969 by the National Aeronautics and Space Administration (NASA)."
 },
 
@@ -126,7 +126,7 @@ var quiz = [{
    "1957",
    "1969"
   ],
-  "correct": "1961",
+  "correctAnswer": "1961",
   "answerBlurb": "In 1961, the Soviet Union launched the first human being into space."
 },
 
@@ -138,7 +138,7 @@ var quiz = [{
    "1957",
    "1969"
   ],
-  "correct": "1957",
+  "correctAnswer": "1957",
   "answerBlurb": "The Soviet Union launched the first satellite into space in 1957."
 },
 
@@ -150,7 +150,7 @@ var quiz = [{
    "3 hours",
    "14 hours"
   ],
-  "correct": "90 minutes",
+  "correctAnswer": "90 minutes",
   "answerBlurb": "It takes the ISS just 90 minutes to travel around the Earth, travelling at 7.66 km/s. That's more than 15 orbits per day!"
 },
 
@@ -162,7 +162,7 @@ var quiz = [{
    "5 days",
    "1 day"
   ],
-  "correct": "27 days",
+  "correctAnswer": "27 days",
   "answerBlurb": "It takes the moon 27 days to travel around the Earth. The moon travels 2cm further away from the Earth every year."
 },
 
@@ -174,7 +174,7 @@ var quiz = [{
    "1986",
    "1990"
   ],
-  "correct": "1981",
+  "correctAnswer": "1981",
   "answerBlurb": "The first Space Shuttle launch took place in 1981."
 },
 
@@ -186,7 +186,7 @@ var quiz = [{
    "1986",
    "1990"
   ],
-  "correct": "1977",
+  "correctAnswer": "1977",
   "answerBlurb": "Voyager 1 was launched in 1977, its original mission to collect data about Jupiter and Saturn. As of 2012, it has made the historic journey into interstellar space, and is currently much farther away from the Sun than Pluto!"
 },
 
@@ -198,7 +198,7 @@ var quiz = [{
    "Edwin 'Buzz' Aldrin",
    "Yuri Gagarin"
   ],
-  "correct": "Neil A. Armstrong",
+  "correctAnswer": "Neil A. Armstrong",
   "answerBlurb": "Neil Armstrong was the first man to walk on the Moon."
 },
 
@@ -210,7 +210,7 @@ var quiz = [{
    "Edwin 'Buzz' Aldrin",
    "Yuri Gagarin"
   ],
-  "correct": "Yuri Gagarin",
+  "correctAnswer": "Yuri Gagarin",
   "answerBlurb": "The Soviet Union sent the first human into space, Yuri Gagarin. He returned after completing one orbit of Earth."
 },
 
@@ -222,7 +222,7 @@ var quiz = [{
    "6500",
    "7500"
   ],
-  "correct": "5500",
+  "correctAnswer": "5500",
   "answerBlurb": "The Sun's surface temperature is 5500 degrees celcius, which is hot enough to vaporise every known material in the universe."
 },
 
@@ -234,7 +234,7 @@ var quiz = [{
    "10 million",
    "15 million"
   ],
-  "correct": "15 million",
+  "correctAnswer": "15 million",
   "answerBlurb": "The core temperature of the Sun is 15 million degrees Celcius. This energy is generated by the nuclear fusion of hydrogen atoms into helium atoms."
 },
 
@@ -246,7 +246,7 @@ var quiz = [{
    "White dwarf",
    "Neutron star"
   ],
-  "correct": "Yellow dwarf",
+  "correctAnswer": "Yellow dwarf",
   "answerBlurb": "Our Sun is a yellow dwarf, one of the more common types of star."
 },
 
@@ -258,7 +258,7 @@ var quiz = [{
    "300,000 km/s",
    "350,000 km/s"
   ],
-  "correct": "300,000 km/s",
+  "correctAnswer": "300,000 km/s",
   "answerBlurb": "Light travels at approximately 300,000 km/s in a vacuum, however its speed varies depending on the medium it travels through. For instance, its speed through water is around 225,000 km/s."
 }]
 
