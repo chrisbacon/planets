@@ -140,3 +140,13 @@ nav div {
     right: 5px;
     top: 5px;
 }
+
+#overlay {
+    position: fixed;
+    width: 90%;
+    left: 5%;
+    top: 5%;
+    height: 90%;
+    z-index: 9999;
+    background-color: white;
+}
