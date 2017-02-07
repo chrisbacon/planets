@@ -41,17 +41,18 @@ ImgUI.prototype = {
 
             span.innerHTML = '&times'
             p.innerText = planet.name + " - " +  "'"+planet.overview+"'" + "\n" + "Number of Moons: " + planet.moonValue + "\n" + "Distance from the sun: " + planet.distanceToSun + "AU" + "\n" + "About this planet: " + planet.description;
-           this.appendChild(popupDiv);
-           popupDiv.appendChild(span);
-           popupDiv.appendChild(p);
-           // self.closeBox();
-           // if (popupDiv.style.display === 'block'){
-           // return this.onclick = null;
-            
+            this.appendChild(popupDiv);
+            popupDiv.appendChild(span);
+            popupDiv.appendChild(p);
 
 
+            imageDiv.onclick = null;
 
-            
+            span.onclick = function(event) {
+                event.stopPropagation();
+                imageDiv.removeChild(popupDiv);
+                imageDiv.onclick = state1;
+            }
         }
 
         imageDiv.onclick = state1; 
