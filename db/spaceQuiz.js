@@ -143,7 +143,7 @@ var quiz = [{
 },
 
 {
-  "question": "How long does it take for the Internation Space Station (ISS) to complete one orbit of the Earth?",
+  "question": "How long does it take for the International Space Station (ISS) to complete one orbit of the Earth?",
   "choices": [
    "40 minutes",
    "90 minutes",
