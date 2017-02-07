@@ -44,8 +44,6 @@ QuizUI.prototype = {
         submit.innerText = "Submit";
         submit.id = "submit";
 
-        submit.onclick = this.loadNextScreen.bind(this);
-
         return submit;
     },
 
@@ -53,6 +51,7 @@ QuizUI.prototype = {
         overlay.innerText = "HELLO...welcome to the overlay!!"
 
         var submit = this.createSubmitButton();
+        submit.onclick = this.loadNextScreen.bind(this)
 
         overlay.appendChild(submit);
     },
@@ -74,8 +73,8 @@ QuizUI.prototype = {
     createRadioInput: function(choice) {
         var input = document.createElement('input');
         input.value = choice;
-        input.type = "radio"
-        name = "choice";
+        input.name = "choice";
+        input.type = "radio";
 
         return input;
     },
@@ -108,7 +107,14 @@ QuizUI.prototype = {
             form.appendChild(label);
         }
 
-        form.appendChild(this.createSubmitButton())
+        var submit = this.createSubmitButton();
+        form.appendChild(submit)
+
+        form.onsubmit = function(event) {
+            event.preventDefault();
+            var answer = event.target.elements['choice'].value;
+            this.checkAnswer(answer);
+        }.bind(this);
 
     },
 
@@ -117,6 +123,12 @@ QuizUI.prototype = {
         //display yes/no + answer blurb
         //load next question
         //quizmaster.checkAnswer(answer)
+        var answerCorrect = false;
+        if (answerCorrect) {
+            this.loadNextScreen();
+        } else {
+            this.end();
+        }
     },
 
     end: function() {
@@ -124,9 +136,8 @@ QuizUI.prototype = {
         var overlay = document.querySelector('#overlay');
         var body = document.querySelector('body');
 
-        overlay.innerText = "";
+        overlay.innerText = "Quiz Ended!!";
 
-        body.removeChild(overlay);
     }
 
 }
