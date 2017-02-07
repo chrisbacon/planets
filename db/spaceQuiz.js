@@ -7,7 +7,7 @@ var quiz = [{
     "9"
   ],
   "correct": "8",
-  "answer blurb": "There are 8 known planets in our solar system."
+  "answerBlurb": "There are 8 known planets in our solar system."
 },
 
 {
@@ -19,7 +19,7 @@ var quiz = [{
     "502,600 km"
   ],
   "correct": "384,400 km",
-  "answer blurb": "The moon is 384,400 km from the Earth."
+  "answerBlurb": "The moon is 384,400 km from the Earth."
 },
 
 {
@@ -31,7 +31,7 @@ var quiz = [{
    "147-152 million km"
   ],
   "correct": "147-152 million km",
-  "answer blurb": "The Earth's orbit is elliptical, meaning it can be anywhere between 147 million and 152 million km away from the Sun at any given time."
+  "answerBlurb": "The Earth's orbit is elliptical, meaning it can be anywhere between 147 million and 152 million km away from the Sun at any given time."
 },
 
 {
@@ -43,7 +43,7 @@ var quiz = [{
    "Astral Unity"
   ],
   "correct": "Astronomical Unit",
-  "answer blurb": "AU stands for Astronomical Unit, or the average distance between the Earth and the Sun."
+  "answerBlurb": "AU stands for Astronomical Unit, or the average distance between the Earth and the Sun."
 },
 
 {
@@ -55,7 +55,7 @@ var quiz = [{
    "Jupiter"
   ],
   "correct": "Venus",
-  "answer blurb": "Venus has a surface temperature of 462 degrees celcius, higher than Mercury's at 430 degrees celcius. This is due to Venus' thick atmosphere which retains heat."
+  "answerBlurb": "Venus has a surface temperature of 462 degrees celcius, higher than Mercury's at 430 degrees celcius. This is due to Venus' thick atmosphere which retains heat."
 },
 
 {
@@ -67,7 +67,7 @@ var quiz = [{
    "Jupiter"
   ],
   "correct": "Jupiter",
-  "answer blurb": "Jupiter is the largest planet in the solar system, having a mass that is 2.5 times larger than every other planet's mass combined!"
+  "answerBlurb": "Jupiter is the largest planet in the solar system, having a mass that is 2.5 times larger than every other planet's mass combined!"
 },
 
 {
@@ -79,7 +79,7 @@ var quiz = [{
    "Mars"
   ],
   "correct": "Mercury",
-  "answer blurb": "Mercury is the smallest planet in the solar system, having a diameter only 1.4 times larger than our Moon."
+  "answerBlurb": "Mercury is the smallest planet in the solar system, having a diameter only 1.4 times larger than our Moon."
 },
 
 {
@@ -91,7 +91,7 @@ var quiz = [{
    "74"
   ],
   "correct": "67",
-  "answer blurb": "Jupiter has 67 moons, the highest number out of all of the planets in our solar system."
+  "answerBlurb": "Jupiter has 67 moons, the highest number out of all of the planets in our solar system."
 },
 
 {
@@ -103,7 +103,7 @@ var quiz = [{
    "Planet"
   ],
   "correct": "Dwarf planet",
-  "answer blurb": "Pluto was recently reclassified as a dwarf planet rather than a planet."
+  "answerBlurb": "Pluto was recently reclassified as a dwarf planet rather than a planet."
 },
 
 {
@@ -115,7 +115,7 @@ var quiz = [{
    "1969"
   ],
   "correct": "1969",
-  "answer blurb": "The first mission to land on the moon was successfully launched in 1969 by the National Aeronautics and Space Administration (NASA)."
+  "answerBlurb": "The first mission to land on the moon was successfully launched in 1969 by the National Aeronautics and Space Administration (NASA)."
 },
 
 {
@@ -127,7 +127,7 @@ var quiz = [{
    "1969"
   ],
   "correct": "1961",
-  "answer blurb": "In 1961, the Soviet Union launched the first human being into space."
+  "answerBlurb": "In 1961, the Soviet Union launched the first human being into space."
 },
 
 {
@@ -139,7 +139,7 @@ var quiz = [{
    "1969"
   ],
   "correct": "1957",
-  "answer blurb": "The Soviet Union launched the first satellite into space in 1957."
+  "answerBlurb": "The Soviet Union launched the first satellite into space in 1957."
 },
 
 {
@@ -151,7 +151,7 @@ var quiz = [{
    "14 hours"
   ],
   "correct": "90 minutes",
-  "answer blurb": "It takes the ISS just 90 minutes to travel around the Earth, travelling at 7.66 km/s. That's more than 15 orbits per day!"
+  "answerBlurb": "It takes the ISS just 90 minutes to travel around the Earth, travelling at 7.66 km/s. That's more than 15 orbits per day!"
 },
 
 {
@@ -163,7 +163,7 @@ var quiz = [{
    "1 day"
   ],
   "correct": "27 days",
-  "answer blurb": "It takes the moon 27 days to travel around the Earth. The moon travels 2cm further away from the Earth every year."
+  "answerBlurb": "It takes the moon 27 days to travel around the Earth. The moon travels 2cm further away from the Earth every year."
 },
 
 {
@@ -175,7 +175,7 @@ var quiz = [{
    "1990"
   ],
   "correct": "1981",
-  "answer blurb": "The first Space Shuttle launch took place in 1981."
+  "answerBlurb": "The first Space Shuttle launch took place in 1981."
 },
 
 {
@@ -187,7 +187,7 @@ var quiz = [{
    "1990"
   ],
   "correct": "1977",
-  "answer blurb": "Voyager 1 was launched in 1977, its original mission to collect data about Jupiter and Saturn. As of 2012, it has made the historic journey into interstellar space, and is currently much farther away from the Sun than Pluto!"
+  "answerBlurb": "Voyager 1 was launched in 1977, its original mission to collect data about Jupiter and Saturn. As of 2012, it has made the historic journey into interstellar space, and is currently much farther away from the Sun than Pluto!"
 },
 
 {
@@ -199,7 +199,7 @@ var quiz = [{
    "Yuri Gagarin"
   ],
   "correct": "Neil A. Armstrong",
-  "answer blurb": "Neil Armstrong was the first man to walk on the Moon."
+  "answerBlurb": "Neil Armstrong was the first man to walk on the Moon."
 },
 
 {
@@ -211,7 +211,7 @@ var quiz = [{
    "Yuri Gagarin"
   ],
   "correct": "Yuri Gagarin",
-  "answer blurb": "The Soviet Union sent the first human into space, Yuri Gagarin. He returned after completing one orbit of Earth."
+  "answerBlurb": "The Soviet Union sent the first human into space, Yuri Gagarin. He returned after completing one orbit of Earth."
 },
 
 {
@@ -223,7 +223,7 @@ var quiz = [{
    "7500"
   ],
   "correct": "5500",
-  "answer blurb": "The Sun's surface temperature is 5500 degrees celcius, which is hot enough to vaporise every known material in the universe."
+  "answerBlurb": "The Sun's surface temperature is 5500 degrees celcius, which is hot enough to vaporise every known material in the universe."
 },
 
 {
@@ -235,7 +235,7 @@ var quiz = [{
    "15 million"
   ],
   "correct": "15 million",
-  "answer blurb": "The core temperature of the Sun is 15 million degrees Celcius. This energy is generated by the nuclear fusion of hydrogen atoms into helium atoms."
+  "answerBlurb": "The core temperature of the Sun is 15 million degrees Celcius. This energy is generated by the nuclear fusion of hydrogen atoms into helium atoms."
 },
 
 {
@@ -247,7 +247,7 @@ var quiz = [{
    "Neutron star"
   ],
   "correct": "Yellow dwarf",
-  "answer blurb": "Our Sun is a yellow dwarf, one of the more common types of star."
+  "answerBlurb": "Our Sun is a yellow dwarf, one of the more common types of star."
 },
 
 {
@@ -259,7 +259,7 @@ var quiz = [{
    "350,000 km/s"
   ],
   "correct": "300,000 km/s",
-  "answer blurb": "Light travels at approximately 300,000 km/s in a vacuum, however its speed varies depending on the medium it travels through. For instance, its speed through water is around 225,000 km/s."
+  "answerBlurb": "Light travels at approximately 300,000 km/s in a vacuum, however its speed varies depending on the medium it travels through. For instance, its speed through water is around 225,000 km/s."
 }]
 
 
