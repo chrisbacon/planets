@@ -16,19 +16,30 @@ describe('Quizmaster', function() {
       });
 
     it('should be able to identify if question answered correctly', function() {
-          assert.equal(quizmaster.correctAnswer(question, "8"), "Correct. There are 8 known planets in our solar system.");
+          assert.equal(quizmaster.answerResponse(question, "8"), "Correct. There are 8 known planets in our solar system.");
           assert.equal(quizmaster.score, 1);
     });
 
     it('question answered incorrectly', function() {
-        assert.equal(quizmaster.correctAnswer(question, "6"), "Incorrect. There are 8 known planets in our solar system.")
+        assert.equal(quizmaster.answerResponse(question, "6"), "Incorrect. There are 8 known planets in our solar system.")
         assert.equal(quizmaster.score, 0);
     });
     it('get random question', function() {
-      quizmaster.questions.push(question.question);
-      quizmaster.questions.push(question2.question);
-      quizmaster.questions.push(question3.question);
-      assert.equal(quizmaster.getQuestion(), question.question)
-    })
+      quizmaster.questions.push(question);
+      quizmaster.questions.push(question2);
+      quizmaster.questions.push(question3);
+      quizmaster.getQuestionAndChoices();
+      assert.equal(quizmaster.questions.length, 2);
+    });
+
+    it('end of quiz message', function() {
+      quizmaster.questions.push(question);
+      quizmaster.questions.push(question2);
+      quizmaster.questions.push(question3);
+      quizmaster.getQuestionAndChoices();
+      quizmaster.getQuestionAndChoices();
+      quizmaster.getQuestionAndChoices();
+      assert.equal(quizmaster.getQuestionAndChoices(), "End of Quiz" + "\n" + "You Scored 0 out of 25, Well done!");
+    });
 
 })

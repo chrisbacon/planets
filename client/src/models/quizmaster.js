@@ -6,32 +6,38 @@ var QuizMaster = function() {
 };
 
 QuizMaster.prototype = {
-  getQuestion: function() {
-    var rndNum = 0;
-    var temp = null;
-
-    for (var ques of this.questions){
-      this.questions.push(ques.question);
+  getQuestionAndChoices: function() {
+    var i = this.questions.length, rndNum = 0,  temp = null;
+    
+    if (0!== i) {
+      rndNum = Math.floor(Math.random() * i);
+      i -= 1;
+      temp = this.questions[i]
+      this.questions[i] = this.questions[rndNum];
+      this.questions[rndNum] = temp; 
+      
+      this.questions.splice(rndNum, 1);
+      return temp.question + "\n" + "a)" + temp.choices[0] + "\n" + "b)" + temp.choices[1] + "\n" + "c)" + temp.choices[2] + "\n" + "d)" + temp.choices[3];
+    } else{
+      return this.endOfQuiz();
     }
     
-    for (var i = 0; i < this.questions.length; i-= 1) {
-      rndNum = Math.floor(Math.random() * (i + 1))
-      temp = this.questions[i]
-      this.questions[i] = this.questions[j];
-      this.questions[j] = temp;
-    }
-    this.questions.pop();
-    return temp;
   },
 
-  correctAnswer: function(questionArray, userAnswer) {
+  endOfQuiz: function() {
+    if(this.questions.length === 0) {
+      return "End of Quiz" + "\n" + "You Scored " + this.score + " out of 25, Well done!"
+    }
+  },
+
+  answerResponse: function(questionArray, userAnswer) {
     if (userAnswer === questionArray.correctAnswer) {
       this.score ++;
-       return "Correct. " + questionArray.answerBlurb;
+      return "Correct. " + questionArray.answerBlurb;
     } else {
-       return "Incorrect. " + questionArray.answerBlurb;
-    }
-  }
+     return "Incorrect. " + questionArray.answerBlurb;
+   }
+ }
 }
 
 module.exports = QuizMaster;
