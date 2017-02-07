@@ -56,7 +56,7 @@ ImgUI.prototype = {
         }
 
         imageDiv.onclick = state1; 
-
+        
     },
 
     render: function(planets) {
