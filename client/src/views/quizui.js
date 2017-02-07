@@ -51,12 +51,12 @@ QuizUI.prototype = {
         overlay.innerText = "HELLO...welcome to the overlay!!"
 
         var submit = this.createSubmitButton();
-        submit.onclick = this.loadNextScreen.bind(this)
+        submit.onclick = this.loadNextQuestion.bind(this)
 
         overlay.appendChild(submit);
     },
 
-    loadNextScreen: function() {
+    loadNextQuestion: function() {
         //is quiz finished? If so go to end()
         //get question off quizmaster and display it. 
         //set onclicks to checkAnswer()
@@ -118,17 +118,30 @@ QuizUI.prototype = {
 
     },
 
-    checkAnswer: function() {
+    checkAnswer: function(answer) {
         //ask quizmaster if answer was correct
         //display yes/no + answer blurb
         //load next question
         //quizmaster.checkAnswer(answer)
-        var answerCorrect = false;
-        if (answerCorrect) {
-            this.loadNextScreen();
+        if (answer === "Earth") {
+            this.populateWithResult("Blurb Blurb Blurb You got it right it was the Earth!!");
         } else {
-            this.end();
+            this.populateWithResult("Blurb blurb blurb you got it wrong it was the Earth!!");
         }
+    },
+
+    populateWithResult: function(result) {
+        var text = document.createElement('p');
+        var overlay = document.querySelector('#overlay');
+        overlay.innerHTML = ""
+
+        text.innerText = result;
+        overlay.appendChild(text);
+
+        var submit = this.createSubmitButton();
+        submit.onclick = this.loadNextQuestion.bind(this)
+
+        overlay.appendChild(submit);
     },
 
     end: function() {
