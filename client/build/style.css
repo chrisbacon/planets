@@ -1,3 +1,4 @@
+
 .popupBox {
     display: none; 
     position: absolute; 
@@ -16,10 +17,17 @@
 }
 
 .imageDiv {
-    display: inline-block;
+
+
+    height: 100%;
+    width: 100%;
+    display: flex;
     white-space: nowrap;
     position: relative;
-    border: 2px dotted black;
+    border: 2px solid white;
+    align-content: center;
+
+
 }
 
 /*img {
@@ -50,21 +58,33 @@
 
 body {
     margin: 0;
-    background-image: url('images/starmap.png')
+    background-image: url('images/starmap.png');
+
 }
 
 main {
+
     display: flex;
     flex-wrap: nowrap;
     position: absolute;
     overflow: auto;
     padding-right: 1200px;
 
+    border: 2px solid red;
+    align-items: center;
+
+    
+
 }
 
 .planet {
     flex-shrink: 0;
-    position: relative;
+
+    position: auto;
+    flex-direction: row;
+    border: 2px solid white;
+    
+
 }
 
 .planetIcon {
