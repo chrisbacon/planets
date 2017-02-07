@@ -112,6 +112,7 @@ nav div {
 }
 
 #marker {
+    background-image: url('images/rocketMarker.png');
     background-color: marker;
     position: relative;
     top: 10px;

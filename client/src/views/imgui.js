@@ -48,7 +48,7 @@ ImgUI.prototype = {
             
             popupDiv.style.display = 'block';
             span.innerHTML = '&times'
-            p.innerText = planet.name + "\n" + planet.overview + "\n" + "Number of Moons: " + planet.moonValue + "\n" + "Distance from the sun: " + planet.distanceToSun + "AU";
+            p.innerText = planet.name + " - " +  "'"+planet.overview+"'" + "\n" + "Number of Moons: " + planet.moonValue + "\n" + "Distance from the sun: " + planet.distanceToSun + "AU" + "\n" + "About this planet: " + planet.description;
            this.appendChild(popupDiv);
            popupDiv.appendChild(span);
            popupDiv.appendChild(p);
