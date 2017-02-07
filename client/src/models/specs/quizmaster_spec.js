@@ -25,21 +25,23 @@ describe('Quizmaster', function() {
         assert.equal(quizmaster.score, 0);
     });
     it('get random question', function() {
-      quizmaster.questions.push(question);
-      quizmaster.questions.push(question2);
-      quizmaster.questions.push(question3);
-      quizmaster.getQuestionAndChoices();
-      assert.equal(quizmaster.questions.length, 2);
+      var questions = []
+      questions.push(question);
+      questions.push(question2);
+      questions.push(question3);
+      quizmaster.getQuestionAndChoices(questions);
+      assert.equal(questions.length, 2);
     });
 
     it('end of quiz message', function() {
-      quizmaster.questions.push(question);
-      quizmaster.questions.push(question2);
-      quizmaster.questions.push(question3);
-      quizmaster.getQuestionAndChoices();
-      quizmaster.getQuestionAndChoices();
-      quizmaster.getQuestionAndChoices();
-      assert.equal(quizmaster.getQuestionAndChoices(), "End of Quiz" + "\n" + "You Scored 0 out of 25, Well done!");
+      var questions = []
+      questions.push(question);
+      questions.push(question2);
+      questions.push(question3);
+      quizmaster.getQuestionAndChoices(questions);
+      quizmaster.getQuestionAndChoices(questions);
+      quizmaster.getQuestionAndChoices(questions);
+      assert.equal(quizmaster.getQuestionAndChoices(questions), "End of Quiz" + "\n" + "You Scored 0 out of 25, Well done!");
     });
 
 })

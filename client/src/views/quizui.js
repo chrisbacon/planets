@@ -1,10 +1,11 @@
 var Questions = require('../models/questions');
 // var QuizMaster = require('../models/quizmaster')
 var Question = require('../models/question');
+var QuizMaster = require('../models/quizmaster')
 
 var QuizUI = function() {
   this.questions = new Questions();
-  
+  this.quizmaster = new QuizMaster();
   this.renderStartButton();
 }
 
