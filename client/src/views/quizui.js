@@ -33,6 +33,11 @@ QuizUI.prototype = {
         var overlay = document.createElement('div');
         overlay.id = "overlay";
 
+        var content = document.createElement('div');
+        content.id = "content";
+
+        overlay.appendChild(content);
+
         var body = document.querySelector('body');
         body.appendChild(overlay);
 
@@ -48,12 +53,12 @@ QuizUI.prototype = {
     },
 
     populateWelcome: function() {
-        overlay.innerText = "HELLO...welcome to the overlay!!"
+        content.innerText = "HELLO...welcome to the overlay!!"
 
         var submit = this.createSubmitButton();
         submit.onclick = this.loadNextQuestion.bind(this)
 
-        overlay.appendChild(submit);
+        content.appendChild(submit);
     },
 
     loadNextQuestion: function() {
@@ -88,15 +93,15 @@ QuizUI.prototype = {
     },
 
     populateWithQuestion: function(question) {
-        var overlay = document.querySelector('#overlay');
-        overlay.innerHTML = "";
+        var content = document.querySelector('#content');
+        content.innerHTML = "";
 
         var text = document.createElement('p');
         text.innerText = question.question;
-        overlay.appendChild(text);
+        content.appendChild(text);
 
         var form = document.createElement('form');
-        overlay.appendChild(form);
+        content.appendChild(form);
 
 
 
@@ -132,24 +137,24 @@ QuizUI.prototype = {
 
     populateWithResult: function(result) {
         var text = document.createElement('p');
-        var overlay = document.querySelector('#overlay');
-        overlay.innerHTML = ""
+        var content = document.querySelector('#content');
+        content.innerHTML = ""
 
         text.innerText = result;
-        overlay.appendChild(text);
+        content.appendChild(text);
 
         var submit = this.createSubmitButton();
         submit.onclick = this.loadNextQuestion.bind(this)
 
-        overlay.appendChild(submit);
+        content.appendChild(submit);
     },
 
     end: function() {
         //display final score
-        var overlay = document.querySelector('#overlay');
+        var content = document.querySelector('#content');
         var body = document.querySelector('body');
 
-        overlay.innerText = "Quiz Ended!!";
+        content.innerText = "Quiz Ended!!";
 
     }
 
