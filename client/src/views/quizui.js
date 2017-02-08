@@ -1,11 +1,10 @@
 var Questions = require('../models/questions');
-// var QuizMaster = require('../models/quizmaster')
+var QuizMaster = require('../models/quizmaster')
 var Question = require('../models/question');
 var QuizMaster = require('../models/quizmaster')
 
 var QuizUI = function() {
   this.questions = new Questions();
-  this.quizmaster = new QuizMaster();
   this.renderStartButton();
 }
 
@@ -26,7 +25,7 @@ QuizUI.prototype = {
 
         //populate quiz master
         this.questions.all(function(questions) {
-          // this.quizMaster = new QuizMaster(questions);
+          this.quizMaster = new QuizMaster(questions);
         }.bind(this))
 
         //create overlaying div, populate welcome screen
@@ -44,7 +43,7 @@ QuizUI.prototype = {
         body.appendChild(cover);
 
         var span = document.createElement('span');
-        span.className = ('close');
+        span.className = 'close';
         span.innerHTML = '&times'
 
         span.onclick = function() {
@@ -87,10 +86,10 @@ QuizUI.prototype = {
         //get question off quizmaster and display it. 
         //set onclicks to checkAnswer()
         console.log('question Loaded!')
-        var quizRunning = true;
 
-        if (quizRunning) {
-            this.populateWithQuestion({question: "What planet are we on", choices: ["Mars", "Earth", "Venus"], correct: "Earth"});
+        var question = this.quizMaster.getQuestion();
+        if (this.quizMaster.quizRunning) {
+            this.populateWithQuestion(question);
         } else {
             this.end();
         }
@@ -149,11 +148,8 @@ QuizUI.prototype = {
         //display yes/no + answer blurb
         //load next question
         //quizmaster.checkAnswer(answer)
-        if (answer === "Earth") {
-            this.populateWithResult("Blurb Blurb Blurb You got it right it was the Earth!!");
-        } else {
-            this.populateWithResult("Blurb blurb blurb you got it wrong it was the Earth!!");
-        }
+        var result = this.quizMaster.answerResponse(answer);
+        this.populateWithResult(result);
     },
 
     populateWithResult: function(result) {
@@ -175,7 +171,7 @@ QuizUI.prototype = {
         var content = document.querySelector('#content');
         var body = document.querySelector('body');
 
-        content.innerText = "Quiz Ended!!";
+        content.innerText = this.quizMaster.endOfQuiz();
 
     }
 

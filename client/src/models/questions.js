@@ -23,10 +23,7 @@ Questions.prototype = {
             }
             var jsonString = this.responseText;
             var results = JSON.parse(jsonString);
-
-            // console.log(results);
             var questions = self.populateQuestions(results.data);
-            console.log(questions);
             callback(questions);
         });
     },
@@ -34,7 +31,7 @@ Questions.prototype = {
     populateQuestions: function(results) {
         var questions = [];
         for (var result of results) {
-            var questions = new Question(result);
+            var question = new Question(result);
             questions.push(question);
         }
         return questions;

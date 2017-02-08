@@ -4,6 +4,7 @@ var path = require('path');
 
 
 router.use('/planets', require('./planets'));
+router.use('/questions', require('./questions'));
 
 router.get('/', function(req, res) {
   res.sendFile(path.join(__dirname + '/../client/build/index.html'));

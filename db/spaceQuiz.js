@@ -1,3 +1,6 @@
+use projectPlanet;
+db.questions.drop();
+
 var quiz = [{
   "question": "Assuming Pluto is not a planet, how many known planets are there in our solar system?",
   "choices": [
@@ -262,4 +265,4 @@ var quiz = [{
   "answerBlurb": "Light travels at approximately 300,000 km/s in a vacuum, however its speed varies depending on the medium it travels through. For instance, its speed through water is around 225,000 km/s."
 }]
 
-
+db.questions.insert(quiz);
