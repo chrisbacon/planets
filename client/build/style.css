@@ -2,14 +2,15 @@
 .popupBox {
     color: #ffffff;
     font-family: "Sansita";
-    /*display: flex;*/
-    position: relative;
-    right: 0;
+    display: none;
+    position: fixed;
+
+    left: 25%;
 
 
     /*float: right;*/
     z-index: 100;
-    width: 500px; 
+    width: 50%; 
     height: 200px; 
     overflow: auto;
 
