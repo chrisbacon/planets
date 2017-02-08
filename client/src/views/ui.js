@@ -59,8 +59,8 @@ UI.prototype = {
         p.id = ('welcomeText');
         
 
-        content.append(header);
-        content.append(p);
+        content.appendChild(header);
+        content.appendChild(p);
 
         this.enterName();
         // console.log(this.enterName());

@@ -1,7 +1,5 @@
 var Questions = require('../models/questions');
 var QuizMaster = require('../models/quizmaster')
-var Question = require('../models/question');
-var QuizMaster = require('../models/quizmaster')
 
 var QuizUI = function() {
   this.questions = new Questions();
@@ -73,6 +71,7 @@ QuizUI.prototype = {
     },
 
     populateWelcome: function() {
+        var content = document.querySelector('#content')
         var input = localStorage.getItem('output');
         content.innerText = "Welcome to the Space Quiz, " +input+ "! There will be 10 questions, click the Begin button when you are ready to start.   "
 
