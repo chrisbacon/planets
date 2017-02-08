@@ -3,13 +3,14 @@
     color: #ffffff;
     font-family: "Sansita";
     /*display: flex;*/
-    position: fixed;
+    position: relative;
     right: 0;
+
 
     /*float: right;*/
     z-index: 100;
-    width: 100px; 
-    height: 150px; 
+    width: 500px; 
+    height: 200px; 
     overflow: auto;
 
     border-radius: 12px 12px 12px 12px;
@@ -20,11 +21,12 @@
 
 .imageDiv {
 
-
+    display: flex;
     height: 100%;
     width: 50%;
-    display: flex;
     white-space: wrap;
+    /*flex-direction: row;*/
+    /*flex-wrap: wrap;*/
     /*position: relative;*/
 
 
@@ -77,7 +79,8 @@ main {
 
 .planet {
     flex-shrink: 0;
-
+    /*align-self: center;*/
+    object-fit: contain;
     position: auto;
     flex-direction: row;
     /*border: 2px solid white;*/
