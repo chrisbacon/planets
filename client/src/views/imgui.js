@@ -30,27 +30,30 @@ ImgUI.prototype = {
 
     clickImage: function(imageDiv, planet) {
 
+
         var state1 = function() {
-            var popupDiv = document.createElement('div')
+            // console.log(planet.name, 'runs state1')
+            var popupDiv = document.querySelector('.popupBox')
             popupDiv.className = ('popupBox');
             var span = document.createElement('span');
             span.className = ('close');
             var p = document.createElement('p');
 
-            popupDiv.style.display = 'block';
+            popupDiv.style.display = "block";
+            popupDiv.innerHTML = "";
+            
 
             span.innerHTML = '&times'
             p.innerText = planet.name + " - " +  "'"+planet.overview+"'" + "\n" + "Number of Moons: " + planet.moonValue + "\n" + "Distance from the sun: " + planet.distanceToSun + "AU" + "\n" + "Interesting Facts: " + planet.description;
-            this.appendChild(popupDiv);
             popupDiv.appendChild(span);
             popupDiv.appendChild(p);
 
 
-            imageDiv.onclick = null;
 
             span.onclick = function(event) {
                 event.stopPropagation();
-                imageDiv.removeChild(popupDiv);
+
+                popupDiv.style.display = "none";
                 imageDiv.onclick = state1;
             }
         }

@@ -1,0 +1,7 @@
+body {
+  font-family: "Sansita";
+}
+
+.rounded {
+  border-radius: 12px 12px 12px 12px;
+}
