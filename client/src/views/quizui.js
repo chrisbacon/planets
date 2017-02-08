@@ -26,7 +26,7 @@ QuizUI.prototype = {
         //populate quiz master
         this.questions.all(function(questions) {
           this.quizMaster = new QuizMaster(questions);
-        }.bind(this))
+      }.bind(this))
 
         //create overlaying div, populate welcome screen
 
@@ -64,18 +64,18 @@ QuizUI.prototype = {
         this.populateWelcome();
     }, 
 
-    createSubmitButton: function() {
+    createSubmitButton: function(text) {
         var submit = document.createElement('button');
-        submit.innerText = "Submit";
+        submit.innerText = text;
         submit.id = "submit";
 
         return submit;
     },
 
     populateWelcome: function() {
-        content.innerText = "HELLO...welcome to the overlay!!"
+        content.innerText = "Welcome to the Space Quiz! There will be 10 questions, click the Begin button when you are ready to start.   "
 
-        var submit = this.createSubmitButton();
+        var submit = this.createSubmitButton("Begin");
         submit.onclick = this.loadNextQuestion.bind(this)
 
         content.appendChild(submit);
@@ -128,11 +128,13 @@ QuizUI.prototype = {
         for (var choice of question.choices) {
             var input = this.createRadioInput(choice);
             var label = this.createLabel(choice);
-            form.appendChild(input);
-            form.appendChild(label);
+            var pairSpan = document.createElement('span'); 
+            pairSpan.appendChild(input);
+            pairSpan.appendChild(label);
+            form.appendChild(pairSpan);
         }
 
-        var submit = this.createSubmitButton();
+        var submit = this.createSubmitButton("Submit");
         form.appendChild(submit)
 
         form.onsubmit = function(event) {
@@ -160,7 +162,7 @@ QuizUI.prototype = {
         text.innerText = result;
         content.appendChild(text);
 
-        var submit = this.createSubmitButton();
+        var submit = this.createSubmitButton("Next");
         submit.onclick = this.loadNextQuestion.bind(this)
 
         content.appendChild(submit);
