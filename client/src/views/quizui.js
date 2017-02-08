@@ -170,10 +170,13 @@ QuizUI.prototype = {
 
     end: function() {
         //display final score
+        var image = document.createElement('img')
         var content = document.querySelector('#content');
         var body = document.querySelector('body');
 
+        img..src = ''
         content.innerText = this.quizMaster.endOfQuiz();
+        content.appendChild(image);
 
     }
 
