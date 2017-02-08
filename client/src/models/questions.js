@@ -23,10 +23,7 @@ Questions.prototype = {
             }
             var jsonString = this.responseText;
             var results = JSON.parse(jsonString);
-
-            // console.log(results);
             var questions = self.populateQuestions(results.data);
-            console.log(questions);
             callback(questions);
         });
     },

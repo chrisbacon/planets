@@ -5,7 +5,6 @@ var QuizMaster = require('../models/quizmaster')
 
 var QuizUI = function() {
   this.questions = new Questions();
-  this.quizmaster = new QuizMaster();
   this.renderStartButton();
 }
 
@@ -44,7 +43,7 @@ QuizUI.prototype = {
         body.appendChild(cover);
 
         var span = document.createElement('span');
-        span.className = ('close');
+        span.className = 'close';
         span.innerHTML = '&times'
 
         span.onclick = function() {
@@ -172,7 +171,7 @@ QuizUI.prototype = {
         var content = document.querySelector('#content');
         var body = document.querySelector('body');
 
-        content.innerText = "Quiz Ended!!";
+        content.innerText = this.quizMaster.endOfQuiz();
 
     }
 

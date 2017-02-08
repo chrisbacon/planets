@@ -1,6 +1,7 @@
 
 var QuizMaster = function(questions) {
-  this.questions = questions[1]
+  this.questions = questions;
+  this.noOfQ = questions.length;
   this.score = 0;
   this.quizRunning=true;
   this.currentQuestion = null;
@@ -31,7 +32,7 @@ QuizMaster.prototype = {
 
   endOfQuiz: function() {
     if(this.questions.length === 0) {
-      return "End of Quiz" + "\n" + "You Scored " + this.score + " out of 25, Well done!"
+      return "End of Quiz" + "\n" + "You Scored " + this.score + " out of " + this.noOfQ + ", Well done!"
     }
   },
 
