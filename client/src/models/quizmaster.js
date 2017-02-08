@@ -1,8 +1,9 @@
 
 var QuizMaster = function(questions) {
-  this.questions = questions
+  this.questions = questions[1]
   this.score = 0;
   this.quizRunning=true;
+  this.currentQuestion = null;
 };
 
 QuizMaster.prototype = {
@@ -17,11 +18,13 @@ QuizMaster.prototype = {
       this.questions[rndNum] = temp; 
       
       this.questions.splice(rndNum, 1);
+      this.currentQuestion = temp;
       return temp
 
     } else{
 
       this.quizRunning = false;
+      this.currentQuestion = null;
     }
     
   },
@@ -32,12 +35,12 @@ QuizMaster.prototype = {
     }
   },
 
-  answerResponse: function(questionArray) {
-    if (userAnswer === this.questions.correctAnswer) {
+  answerResponse: function(userAnswer) {
+    if (userAnswer === this.currentQuestion.correctAnswer) {
       this.score ++;
-      return "Correct. " + this.questions.answerBlurb;
+      return "Correct. " + this.currentQuestion.answerBlurb;
     } else {
-     return "Incorrect. " + this.questions.answerBlurb;
+     return "Incorrect. " + this.currentQuestion.answerBlurb;
    }
  }
 }

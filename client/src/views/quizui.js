@@ -88,8 +88,8 @@ QuizUI.prototype = {
         //set onclicks to checkAnswer()
         console.log('question Loaded!')
 
+        var question = this.quizMaster.getQuestion();
         if (this.quizMaster.quizRunning) {
-            var question = this.quizMaster.getQuestion();
             this.populateWithQuestion(question);
         } else {
             this.end();
@@ -149,7 +149,7 @@ QuizUI.prototype = {
         //display yes/no + answer blurb
         //load next question
         //quizmaster.checkAnswer(answer)
-        var result = this.quizMaster.endOfQuiz();
+        var result = this.quizMaster.answerResponse(answer);
         this.populateWithResult(result);
     },
 
