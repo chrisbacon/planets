@@ -2,61 +2,40 @@
 .popupBox {
     color: #ffffff;
     font-family: "Sansita";
-    display: flex;
-    /*text-align: left;*/
-    /*justify-content: left;*/
-    margin-bottom: 10px;
-    position: fixed; 
-/*    border: 2px dotted black;*/
-    
-    left: 0;
-    top: 0;
-    margin-top: 3px;
-    margin-left: 3px;
-    float: right;
-    z-index: 100;
-    width: 50%; 
-    height: 35%; 
-    /*height: 100%; /* is interesting*/
-    /*overflow: auto;*/
-    overflow: auto;
-    
+    /*display: flex;*/
+    position: fixed;
+    right: 0;
 
-    /*    border: 2px dotted black;*/
-/*    width: 60%; 
-    height: 47%; */
-/*    background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/M101_hires_STScI-PRC2006-10a.jpg/1280px-M101_hires_STScI-PRC2006-10a.jpg");*/
-/*    background-repeat: no-repeat;
-    background-size: contain;*/
+    /*float: right;*/
+    z-index: 100;
+    width: 100px; 
+    height: 150px; 
+    overflow: auto;
+
     border-radius: 12px 12px 12px 12px;
     background-color: rgb(0,0,0); 
     background-color: rgba(179, 200, 255, 0.6);
 }
 
+
 .imageDiv {
 
 
     height: 100%;
-    width: 100%;
+    width: 50%;
     display: flex;
     white-space: wrap;
-    position: relative;
-    /*border: 2px solid white;*/
-    /*align-content: center;*/
+    /*position: relative;*/
 
 
 }
-
-/*img {
-    border: 2px dotted black;
-}*/
 
 .popupBox-content {
     background-color: #fefefe;
     margin: 15% auto; 
     padding: 20px;
     border: 1px solid #888;
-    /*width: 80%;*/
+    /*width: 40px;*/
 
 
 }
