@@ -5,7 +5,7 @@ db.planets.drop();
         name: "Sun",
         overview: "Big, bright and Hot",
         image: "images/planet0.png",
-        description: "That big bright thing in the sky that we offer sacrifices to.  Our sun is a yellow dwarf.  Not that it's small.  At 1,392,684 km in diameter and with a circumference of 4,370,005 km you could fit 960,000 Earth-sized sqheres inside it!!  Boy it's hot there too! At the surface it's a balmy 5500℃.  Our sun is approximately 4.6 Billion years old.",
+        description: "That big bright thing in the sky that we offer sacrifices to.  Our sun is a yellow dwarf.  Not that it's small.  At 1,392,684 km in diameter and with a circumference of 4,370,005 km you could fit 960,000 Earth-sized sqheres inside it!!  Boy it's hot there too! At the surface it's a balmy 5500℃, reaching temperatures of 15 million℃ at the core!  Our sun is approximately 4.6 billion years old. In another 4 billion years it will swell up, becoming a red giant and engulfing any planets near it!",
         distanceToSun: 0.0,
         moonValue: 0
     });
