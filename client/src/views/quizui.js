@@ -73,7 +73,8 @@ QuizUI.prototype = {
     },
 
     populateWelcome: function() {
-        content.innerText = "Welcome to the Space Quiz! There will be 10 questions, click the Begin button when you are ready to start.   "
+        var input = localStorage.getItem('output');
+        content.innerText = "Welcome to the Space Quiz, " +input+ "! There will be 10 questions, click the Begin button when you are ready to start.   "
 
         var submit = this.createSubmitButton("Begin");
         submit.onclick = this.loadNextQuestion.bind(this)
@@ -170,10 +171,14 @@ QuizUI.prototype = {
 
     end: function() {
         //display final score
+        var image = document.createElement('img')
+        image.id = ('rocket')
         var content = document.querySelector('#content');
         var body = document.querySelector('body');
 
+        // img.src = '../../../../images/rocket.jpg'
         content.innerText = this.quizMaster.endOfQuiz();
+        content.appendChild(image);
 
     }
 
