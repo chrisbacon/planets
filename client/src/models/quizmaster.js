@@ -7,17 +7,16 @@ var QuizMaster = function(questions) {
 
 QuizMaster.prototype = {
   getQuestion: function() {
-    var questions = this.questions;
-    var i = questions.length, rndNum = 0,  temp = null;
+    var i = this.questions.length, rndNum = 0,  temp = null;
     
     if (0!== i) {
       rndNum = Math.floor(Math.random() * i);
       i -= 1;
-      temp = questions[i]
-      questions[i] = questions[rndNum];
-      questions[rndNum] = temp; 
+      temp = this.questions[i]
+      this.questions[i] = this.questions[rndNum];
+      this.questions[rndNum] = temp; 
       
-      questions.splice(rndNum, 1);
+      this.questions.splice(rndNum, 1);
       return temp
 
     } else{
@@ -27,18 +26,18 @@ QuizMaster.prototype = {
     
   },
 
-  endOfQuiz: function(questions) {
-    if(questions.length === 0) {
+  endOfQuiz: function() {
+    if(this.questions.length === 0) {
       return "End of Quiz" + "\n" + "You Scored " + this.score + " out of 25, Well done!"
     }
   },
 
-  answerResponse: function(questionArray, userAnswer) {
-    if (userAnswer === questionArray.correctAnswer) {
+  answerResponse: function(questionArray) {
+    if (userAnswer === this.questions.correctAnswer) {
       this.score ++;
-      return "Correct. " + questionArray.answerBlurb;
+      return "Correct. " + this.questions.answerBlurb;
     } else {
-     return "Incorrect. " + questionArray.answerBlurb;
+     return "Incorrect. " + this.questions.answerBlurb;
    }
  }
 }

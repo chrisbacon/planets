@@ -34,7 +34,7 @@ Questions.prototype = {
     populateQuestions: function(results) {
         var questions = [];
         for (var result of results) {
-            var questions = new Question(result);
+            var question = new Question(result);
             questions.push(question);
         }
         return questions;
