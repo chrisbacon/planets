@@ -1,7 +1,7 @@
 
 var QuizMaster = function(questions) {
   this.questions = questions;
-  this.noOfQ = questions.length;
+  this.noOfQ = this.questions.length;
   this.score = 0;
   this.quizRunning=true;
   this.currentQuestion = null;
@@ -10,17 +10,18 @@ var QuizMaster = function(questions) {
 QuizMaster.prototype = {
   getQuestion: function() {
     var i = this.questions.length, rndNum = 0,  temp = null;
+    console.log(i);
     
-    if (0!== i) {
+    if (12!== i) {
       rndNum = Math.floor(Math.random() * i);
       i -= 1;
-      temp = this.questions[i]
+      temp = this.questions[i];
       this.questions[i] = this.questions[rndNum];
       this.questions[rndNum] = temp; 
       
       this.questions.splice(rndNum, 1);
       this.currentQuestion = temp;
-      return temp
+      return temp;
 
     } else{
 
@@ -31,8 +32,19 @@ QuizMaster.prototype = {
   },
 
   endOfQuiz: function() {
-    if(this.questions.length === 0) {
-      return "End of Quiz" + "\n" + "You Scored " + this.score + " out of " + this.noOfQ + ", Well done!"
+    var wellDone = "";
+    if(this.score < 5) {
+      wellDone = "Keep practicing!";
+    } else if (4 < this.score < 7) {
+      wellDone = "Well done!";
+    } else if (6 < this.score < 10) {
+      wellDone = "Very impressive!" ;
+    } else if (this.score === 10) {
+      wellDone = "Congratulations, you are a space expert!"
+    }
+
+    if(this.questions.length === 12) {
+      return "End of Quiz" + "\n" + "You Scored " + this.score + " out of 10. " + wellDone
     }
   },
 
@@ -44,6 +56,7 @@ QuizMaster.prototype = {
      return "Incorrect. " + this.currentQuestion.answerBlurb;
    }
  }
+
 }
 
 module.exports = QuizMaster;
