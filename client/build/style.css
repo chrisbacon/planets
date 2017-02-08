@@ -2,10 +2,13 @@
 .popupBox {
     color: #ffffff;
     font-family: "Sansita";
-    display: none; 
+    display: flex;
+    /*text-align: left;*/
+    /*justify-content: left;*/
+    margin-bottom: 10px;
     position: fixed; 
 /*    border: 2px dotted black;*/
-
+    
     left: 0;
     top: 0;
     margin-top: 3px;
@@ -14,7 +17,11 @@
     z-index: 100;
     width: 50%; 
     height: 35%; 
-    overflow: auto; 
+    /*height: 100%; /* is interesting*/
+    /*overflow: auto;*/
+    overflow: auto;
+    
+
     /*    border: 2px dotted black;*/
 /*    width: 60%; 
     height: 47%; */
@@ -32,9 +39,9 @@
     height: 100%;
     width: 100%;
     display: flex;
-    white-space: nowrap;
+    white-space: wrap;
     position: relative;
-    border: 2px solid white;
+    /*border: 2px solid white;*/
     /*align-content: center;*/
 
 
@@ -49,7 +56,9 @@
     margin: 15% auto; 
     padding: 20px;
     border: 1px solid #888;
-    width: 80%; 
+    /*width: 80%;*/
+
+
 }
 
 .close {
@@ -80,7 +89,7 @@ main {
     overflow: auto;
     padding-right: 1200px;
 
-    border: 2px solid red;
+    /*border: 2px solid red;*/
     align-items: center;
 
     
@@ -92,7 +101,7 @@ main {
 
     position: auto;
     flex-direction: row;
-    border: 2px solid white;
+    /*border: 2px solid white;*/
     
 
 }
