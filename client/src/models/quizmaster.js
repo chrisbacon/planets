@@ -35,9 +35,9 @@ QuizMaster.prototype = {
     var wellDone = "";
     if(this.score < 5) {
       wellDone = "Keep practicing!";
-    } else if (7 > this.score > 4) {
+    } else if (7 > this.score && this.score > 4) {
       wellDone = "Well done!";
-    } else if (10 > this.score > 6) {
+    } else if (10 > this.score && this.score > 6) {
       wellDone = "Very impressive!" ;
     } else if (this.score === 10) {
       wellDone = "Congratulations, you are a space expert!"
