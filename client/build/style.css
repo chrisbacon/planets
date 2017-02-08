@@ -75,6 +75,12 @@ main {
 
 }
 
+.planet:hover {
+        /*transform: scale(1.5);*/
+    -webkit-transform: rotate(720deg);
+    -webkit-transition-duration: 3s;
+}
+
 .planet {
     flex-shrink: 0;
 
