@@ -73,7 +73,9 @@ QuizUI.prototype = {
     },
 
     populateWelcome: function() {
-        content.innerText = "Welcome to the Space Quiz! There will be 10 questions, click the Begin button when you are ready to start.   "
+        // var userName = document.querySelector('#userName');
+        var input = localStorage.getItem('output');
+        content.innerText = "Welcome to the Space Quiz, " +input+ "! There will be 10 questions, click the Begin button when you are ready to start.   "
 
         var submit = this.createSubmitButton("Begin");
         submit.onclick = this.loadNextQuestion.bind(this)

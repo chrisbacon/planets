@@ -89,7 +89,7 @@ UI.prototype = {
     enterButton.onclick = function() {
         var welcomeText = document.querySelector('#welcomeText');
         var output = input.value;
-    
+    localStorage.setItem('output', input.value);
         welcomeText.innerText = "Hello " + output + "!" + " Welcome to NASA (Not Another Space App). Learn about the planets of the Solar System in our scale model! Navigate by scrolling sideways or by clicking on a planet in the nav bar below. To find out about a planet, click on it! If you feel confident about your space knowledge, try our quiz by clicking the button in the top right corner."
     
         enterText.style.visibility = 'hidden'
