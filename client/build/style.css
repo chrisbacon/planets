@@ -6,6 +6,7 @@
     position: fixed;
 
     left: 25%;
+    top: 5%;
 
 
     /*float: right;*/
@@ -45,9 +46,12 @@
 
 .close {
     color: #aaa;
-    float: right;
+    position: absolute;
+    right: 18px;
+    top: 5px;
     font-size: 28px;
     font-weight: bold;
+
 }
 
 .close:hover,
