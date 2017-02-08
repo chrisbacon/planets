@@ -32,15 +32,16 @@ QuizMaster.prototype = {
   },
 
   endOfQuiz: function() {
+    var input = localStorage.getItem('output');
     var wellDone = "";
     if(this.score < 5) {
-      wellDone = "Keep practicing!";
+      wellDone = "Keep practicing, " +input + "!";
     } else if (7 > this.score && this.score > 4) {
-      wellDone = "Well done!";
+      wellDone = "Well done, " +input+ "!";
     } else if (10 > this.score && this.score > 6) {
-      wellDone = "Very impressive!" ;
+      wellDone = "Very impressive, " +input+ "!" ;
     } else if (this.score === 10) {
-      wellDone = "Congratulations, you are a space expert!"
+      wellDone = "Congratulations, " +input+ " you are a space expert!"
     }
 
     if(this.questions.length === 12) {

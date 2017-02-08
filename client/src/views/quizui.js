@@ -73,7 +73,6 @@ QuizUI.prototype = {
     },
 
     populateWelcome: function() {
-        // var userName = document.querySelector('#userName');
         var input = localStorage.getItem('output');
         content.innerText = "Welcome to the Space Quiz, " +input+ "! There will be 10 questions, click the Begin button when you are ready to start.   "
 
