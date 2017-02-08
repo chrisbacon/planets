@@ -1,5 +1,5 @@
 var Questions = require('../models/questions');
-// var QuizMaster = require('../models/quizmaster')
+var QuizMaster = require('../models/quizmaster')
 var Question = require('../models/question');
 var QuizMaster = require('../models/quizmaster')
 
@@ -26,7 +26,7 @@ QuizUI.prototype = {
 
         //populate quiz master
         this.questions.all(function(questions) {
-          // this.quizMaster = new QuizMaster(questions);
+          this.quizMaster = new QuizMaster(questions);
         }.bind(this))
 
         //create overlaying div, populate welcome screen
@@ -87,10 +87,10 @@ QuizUI.prototype = {
         //get question off quizmaster and display it. 
         //set onclicks to checkAnswer()
         console.log('question Loaded!')
-        var quizRunning = true;
 
-        if (quizRunning) {
-            this.populateWithQuestion({question: "What planet are we on", choices: ["Mars", "Earth", "Venus"], correct: "Earth"});
+        if (this.quizMaster.quizRunning) {
+            var question = this.quizMaster.getQuestion();
+            this.populateWithQuestion(question);
         } else {
             this.end();
         }
@@ -149,11 +149,8 @@ QuizUI.prototype = {
         //display yes/no + answer blurb
         //load next question
         //quizmaster.checkAnswer(answer)
-        if (answer === "Earth") {
-            this.populateWithResult("Blurb Blurb Blurb You got it right it was the Earth!!");
-        } else {
-            this.populateWithResult("Blurb blurb blurb you got it wrong it was the Earth!!");
-        }
+        var result = this.quizMaster.endOfQuiz();
+        this.populateWithResult(result);
     },
 
     populateWithResult: function(result) {

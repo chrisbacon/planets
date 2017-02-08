@@ -1,10 +1,13 @@
 
-var QuizMaster = function() {
+var QuizMaster = function(questions) {
+  this.questions = questions
   this.score = 0;
+  this.quizRunning=true;
 };
 
 QuizMaster.prototype = {
-  getQuestionAndChoices: function(questions) {
+  getQuestion: function() {
+    var questions = this.questions;
     var i = questions.length, rndNum = 0,  temp = null;
     
     if (0!== i) {
@@ -15,9 +18,11 @@ QuizMaster.prototype = {
       questions[rndNum] = temp; 
       
       questions.splice(rndNum, 1);
-      return temp.question + "\n" + "a)" + temp.choices[0] + "\n" + "b)" + temp.choices[1] + "\n" + "c)" + temp.choices[2] + "\n" + "d)" + temp.choices[3];
+      return temp
+
     } else{
-      return this.endOfQuiz(questions);
+
+      this.quizRunning = false;
     }
     
   },
