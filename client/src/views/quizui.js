@@ -171,10 +171,11 @@ QuizUI.prototype = {
     end: function() {
         //display final score
         var image = document.createElement('img')
+        image.id = ('rocket')
         var content = document.querySelector('#content');
         var body = document.querySelector('body');
 
-        img..src = ''
+        // img.src = '../../../../images/rocket.jpg'
         content.innerText = this.quizMaster.endOfQuiz();
         content.appendChild(image);
 

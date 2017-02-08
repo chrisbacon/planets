@@ -94,5 +94,26 @@ main {
     
 
 }
+#welcomeHeader {
+    margin-left: 100px;
+}
+
+#enterName {
+    display: flex;
+    flex-direction: column;
+}
+
+#enterText{
+    margin-top: 30px;
+    margin-left: 115px;
+}
+#userName { 
+    width: 100px;
+    margin-left: 230px;
+ }
+ #enterButton {
+    width: 70px;
+    margin-left: 247px;
+ }
 
 
