@@ -72,13 +72,19 @@ QuizUI.prototype = {
 
     populateWelcome: function() {
         var content = document.querySelector('#content')
+        var header = document.createElement('h1');
         var input = localStorage.getItem('output');
-        content.innerText = "Welcome to the Space Quiz, " +input+ "! There will be 10 questions, click the Begin button when you are ready to start.   "
+        var p = document.createElement('p');
+        p.innerText = "Welcome to the Space Quiz, " +input+ "! There will be 10 questions, click the Begin button when you are ready to start.   "
+        header.innerText = "Space Quiz";
+        content.appendChild(header);
+        content.appendChild(p);
 
         var submit = this.createSubmitButton("Begin");
         submit.onclick = this.loadNextQuestion.bind(this)
 
         content.appendChild(submit);
+
     },
 
     loadNextQuestion: function() {
