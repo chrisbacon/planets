@@ -107,22 +107,25 @@ main {
 
 #enterName {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     z-index: 1;
+    align-items: center;
+    height: 1.5em;
+    margin-top: 5%;
 }
 
 #enterText{
-    margin-top: 110px;
-    margin-left: 115px;
+    /*margin-top: 110px;*/
+    /*margin-left: 5%;*/
 }
 #userName { 
     width: 100px;
-    margin-left: 230px;
+    margin-left: 2%;
  }
  #enterButton {
     width: 70px;
-    margin-left: 247px;
-    z-index: 1;
+    /*margin-left: 247px;
+    z-index: 1;*/
  }
 
 

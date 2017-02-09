@@ -46,7 +46,7 @@ UI.prototype = {
 
         overlay.appendChild(span);
         overlay.appendChild(content);
-        overlay.appendChild(enterName);
+        
 
         var body = document.querySelector('body');
         body.appendChild(overlay);
@@ -60,6 +60,7 @@ UI.prototype = {
         
 
         content.appendChild(header);
+        content.appendChild(enterName);
         content.appendChild(p);
 
         this.enterName();
