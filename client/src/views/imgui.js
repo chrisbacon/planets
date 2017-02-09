@@ -34,9 +34,9 @@ ImgUI.prototype = {
         var state1 = function() {
             // console.log(planet.name, 'runs state1')
             var popupDiv = document.querySelector('.popupBox')
-            popupDiv.className = ('overlay');
+            popupDiv.className = ('popupBox');
             var span = document.createElement('span');
-            span.className = 'close';
+            span.className = ('close');
             var p = document.createElement('p');
 
             popupDiv.style.display = "block";
